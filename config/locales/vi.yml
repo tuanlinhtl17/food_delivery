@@ -1,0 +1,16 @@
+vi:
+  controllers:
+    user:
+      register:
+        success: "Tài khoản của bạn đã đăng ký thành công !!!"
+  view:
+    users:
+      new:
+        register: "Đăng ký"
+        name: "Tên"
+        username: "Tên đăng nhập"
+        email: "Email"
+        password: "Mật khẩu"
+        comfirmation: "Xác nhận mật khẩu"
+        address: "Địa chỉ"
+        phone_number: "Số điện thoại"
