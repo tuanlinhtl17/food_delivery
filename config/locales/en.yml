@@ -3,7 +3,7 @@ en:
     user:
       register:
         success: "Your account successfully registered !!!"
-  view:
+  views:
     users:
       new:
         register: "Register"
@@ -14,4 +14,10 @@ en:
         comfirmation: "Confirmation"
         address: "Address"
         phone_number: "Phone number"
-
+    sessions:
+      new:
+        username: "Username"
+        password: "Password"
+        remember: "Remember me on this computer"
+    layouts:
+        login: "Login"

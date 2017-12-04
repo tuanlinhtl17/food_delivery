@@ -80,6 +80,7 @@ ActiveRecord::Schema.define(version: 20171129134048) do
     t.string "password_digest"
     t.string "address"
     t.string "phone_number"
+    t.string "remember_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -1,9 +1,10 @@
 vi:
+
   controllers:
     user:
       register:
         success: "Tài khoản của bạn đã đăng ký thành công !!!"
-  view:
+  views:
     users:
       new:
         register: "Đăng ký"
@@ -14,3 +15,10 @@ vi:
         comfirmation: "Xác nhận mật khẩu"
         address: "Địa chỉ"
         phone_number: "Số điện thoại"
+    sessions:
+      new:
+        username: "Tên đăng nhập"
+        password: "Mật khẩu"
+        remember: "Lưu tài khoản"
+    layouts:
+        login: "Login"
