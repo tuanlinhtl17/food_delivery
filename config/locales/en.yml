@@ -1,2 +1,17 @@
 en:
+  controllers:
+    user:
+      register:
+        success: "Your account successfully registered !!!"
+  view:
+    users:
+      new:
+        register: "Register"
+        name: "Name"
+        username: "Username"
+        email: "Email"
+        password: "Password"
+        comfirmation: "Confirmation"
+        address: "Address"
+        phone_number: "Phone number"
 

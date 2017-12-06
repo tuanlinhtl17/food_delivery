@@ -23,16 +23,6 @@ ActiveRecord::Schema.define(version: 20171129134048) do
     t.index ["users_id"], name: "index_carts_on_users_id"
   end
 
-  create_table "comment_employees", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "employee_id"
-    t.string "content"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["employee_id"], name: "index_comment_employees_on_employee_id"
-    t.index ["user_id"], name: "index_comment_employees_on_user_id"
-  end
-
   create_table "comment_foods", force: :cascade do |t|
     t.integer "user_id"
     t.integer "food_id"
@@ -43,18 +33,6 @@ ActiveRecord::Schema.define(version: 20171129134048) do
     t.index ["user_id"], name: "index_comment_foods_on_user_id"
   end
 
-  create_table "employees", force: :cascade do |t|
-    t.integer "employee_type"
-    t.string "name"
-    t.string "username"
-    t.string "phone_number"
-    t.string "password_digest"
-    t.float "rating_avg"
-    t.integer "rate_count"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "food_categories", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -63,6 +41,7 @@ ActiveRecord::Schema.define(version: 20171129134048) do
 
   create_table "foods", force: :cascade do |t|
     t.string "name"
+    t.string "img_url"
     t.float "price"
     t.integer "food_category_id"
     t.float "rating_avg"
@@ -70,23 +49,6 @@ ActiveRecord::Schema.define(version: 20171129134048) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["food_category_id"], name: "index_foods_on_food_category_id"
-  end
-
-  create_table "ingredients", force: :cascade do |t|
-    t.string "name"
-    t.integer "food_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["food_id"], name: "index_ingredients_on_food_id"
-  end
-
-  create_table "like_foods", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "food_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["food_id"], name: "index_like_foods_on_food_id"
-    t.index ["user_id"], name: "index_like_foods_on_user_id"
   end
 
   create_table "order_details", force: :cascade do |t|
@@ -101,20 +63,19 @@ ActiveRecord::Schema.define(version: 20171129134048) do
   end
 
   create_table "orders", force: :cascade do |t|
-    t.integer "user_id"
+    t.integer "customer_id"
     t.integer "employee_id"
     t.string "address"
     t.float "total_money"
     t.integer "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["employee_id"], name: "index_orders_on_employee_id"
-    t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
     t.string "name"
-    t.boolean "admin", default: false
+    t.string "email"
+    t.integer "usertype"
     t.string "username"
     t.string "password_digest"
     t.string "address"
