@@ -1,10 +1,25 @@
 vi:
-
+  mailers:
+    user_mailer:
+      activate: "Xác nhận tài khoản"
   controllers:
-    user:
+    account_activations:
+      success: "Tài khoản đã được xác nhận!"
+      danger: "Liên kết kích hoạt không hợp lệ!"
+    users:
       register:
-        success: "Tài khoản của bạn đã đăng ký thành công !!!"
+        info: "Hãy kiểm tra email của bạn để xác nhận tài khoản của bạn."
+    sessions:
+      create:
+        message1: "Tài khoản chưa được xác nhận. "
+        message2: "Kiểm tra email của bạn để biết liên kết xác nhận."
+        danger: "Kết hợp email/mật khẩu không hợp lệ"
   views:
+    user_mailer:
+      account_activation:
+        hi: "Xin chào"
+        welcome: "Chào mừng bạn tới với Delivery Food! Nhấp vào liên kết bên dưới để kích hoạt tài khoản của bạn:"
+        activate: "Kích hoạt"
     users:
       new:
         register: "Đăng ký"
@@ -21,4 +36,5 @@ vi:
         password: "Mật khẩu"
         remember: "Lưu tài khoản"
     layouts:
-        login: "Login"
+        login: "Đăng nhập"
+        close: "Đóng"
