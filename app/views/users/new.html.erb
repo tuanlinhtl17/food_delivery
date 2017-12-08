@@ -1,32 +1,32 @@
-<% provide(:title, "Register") %>
-<h1><%= t ".register" %></h1>
+<% provide(:title, t("views.users.new.register")) %>
+<h1><%= t("views.users.new.register") %></h1>
 <div class="row">
   <div class="col-md-4 col-md-offset-4">
     <%= form_for(@user) do |f| %>
       <%= render "shared/error_messages", object: f.object %>
 
-      <%= f.label :name, (t ".name") %>
+      <%= f.label :name, (t "views.users.new.name") %>
       <%= f.text_field :name, class: 'form-control' %>
 
-      <%= f.label :email, (t ".email") %>
+      <%= f.label :email, (t "views.users.new.email") %>
       <%= f.email_field :email, class: 'form-control' %>
 
-      <%= f.label :username, (t ".username") %>
+      <%= f.label :username, (t "views.users.new.username") %>
       <%= f.text_field :username, class: 'form-control' %>
 
-      <%= f.label :password, (t ".password") %>
+      <%= f.label :password, (t "views.users.new.password") %>
       <%= f.password_field :password, class: 'form-control' %>
 
-      <%= f.label :password_confirmation, (t ".comfirmation") %>
+      <%= f.label :password_confirmation, (t "views.users.new.comfirmation") %>
       <%= f.password_field :password_confirmation, class: 'form-control' %>
 
-      <%= f.label :address, (t ".address") %>
+      <%= f.label :address, (t "views.users.new.address") %>
       <%= f.text_field :address, class: 'form-control' %>
 
-      <%= f.label :phone_number, (t ".phone_number") %>
+      <%= f.label :phone_number, (t "views.users.newviews.users.new.phone_number") %>
       <%= f.text_field :phone_number, class: 'form-control' %>
 
-      <%= f.submit t "view.users.new.register", class: "btn btn-primary" %>
+      <%= f.submit t "views.users.new.register", class: "btn btn-primary" %>
     <% end %>
   </div>
 </div>

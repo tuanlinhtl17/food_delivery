@@ -1,9 +1,25 @@
 en:
+  mailers:
+    user_mailer:
+      activate: "Account activation"
   controllers:
-    user:
+    account_activations:
+      success: "Account activated!"
+      danger: "Invalid activation link!"
+    users:
       register:
-        success: "Your account successfully registered !!!"
+        info: "Please check your email to activate your account."
+    sessions:
+      create:
+        message1: "Account not activated. "
+        message2: "Check your email for the activation link."
+        danger: "Invalid email/password combination"
   views:
+    user_mailer:
+      account_activation:
+        hi: "Hi"
+        welcome: "Welcome to the Delivery Food! Click on the link below to activate your account:"
+        activate: "Activate"
     users:
       new:
         register: "Register"
@@ -21,3 +37,4 @@ en:
         remember: "Remember me on this computer"
     layouts:
         login: "Login"
+        close: "Close"
