@@ -35,7 +35,6 @@ class SessionsController < ApplicationController
       rescue
         flash.now[:danger] = t("controllers.sessions.create.danger")
       end
-
     end
   end
 
