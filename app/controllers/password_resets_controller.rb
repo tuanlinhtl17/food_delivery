@@ -11,22 +11,22 @@ class PasswordResetsController < ApplicationController
     if @user
       @user.create_reset_digest
       @user.send_password_reset_email
-      flash[:info] = t("controllers.create.sent")
+      flash[:info] = t "controllers.create.sent"
       redirect_to root_url
     else
-      flash.now[:danger] = t("controllers.create.danger")
+      flash.now[:danger] = t "controllers.create.danger"
       render "new"
     end
   end
 
   def update
     if params[:user][:password].empty?
-      @user.errors.add(:password, t("controllers.create.errors"))
+      @user.errors.add(:password, t "controllers.create.errors")
       render "edit"
     elsif @user.update_attributes(user_params)
       log_in @user
       @user.update_attribute(:reset_digest, nil)
-      flash[:success] = t("controllers.create.success")
+      flash[:success] = t "controllers.create.success"
       redirect_to @user
     else
       render "edit"

@@ -61,6 +61,13 @@ your password will stay as it is."
         search_form:
           placeholder: "Search your favourite foods or food categories"
           button: "Search"
+        language: "Language"
+        en: "English"
+        vi: "Vietnamese"
+        slogan: "Slogan"
+        search: "Search......everything"
+        login_via: "Login via Facebook"
+        signup: "Sign up"
     password_resets:
       new:
         email: "Email address"
@@ -74,3 +81,4 @@ your password will stay as it is."
     static_pages:
       search:
         nomatch: "Can't find foods match your keyword"
+

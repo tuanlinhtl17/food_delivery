@@ -55,3 +55,70 @@ p {
   text-align: center;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
+#search-banner{
+  width: 100%;
+  /*margin: auto;*/
+  margin-bottom: 0;
+}
+#header{
+  margin-bottom: 0;
+}
+.input-group{
+  width: 50%;
+  margin: 0 auto;
+}
+#input-banner{
+  margin-right: auto;
+  margin-left: 80%;
+  width: 100%;
+  height: 70px;
+  text-align: center;
+}
+#input-button{
+  margin-left: 258%;
+  height: 70px;
+  width: 60px;
+}
+.form-login {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto 100px;
+  padding: 0px;
+  text-align: center;
+  .modal-inline {
+    display: inline;
+    label {
+      display: inline;
+    }
+  }
+}
+.login-inside {
+  width: 400px;
+}
+.modal-content{
+  max-width: 400px;
+  max-height: 820px;
+  margin: 0 auto 100px;
+  padding: 45px;
+}
+#login-button{
+  text-align: center;
+}
+.jumbotron{
+  background-image: url("http://www.debatingeurope.eu/wp-content/uploads/2016/10/05_Food_for_thought_visual_ugly-food.jpg");
+  height: 50%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.tab{
+  display: inline-block;
+}
+a#login-modal:hover{
+  cursor: pointer;
+}
+a#signup-modal:hover{
+  cursor: pointer;
+}

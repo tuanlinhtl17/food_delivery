@@ -7,7 +7,7 @@ class StaticPagesController < ApplicationController
     if params[:search]
       @foods = Food.search params[:search]
       if !@foods
-        flash[:warning] = t"views.static_pages.search.nomatch"
+        flash[:warning] = t("views.static_pages.search.nomatch")
         redirect_to root_url
       else
         render :partial => "static_pages/show_all_foods"
