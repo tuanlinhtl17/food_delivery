@@ -68,6 +68,7 @@ mật khẩu của bạn sẽ vẫn như nó được."
         search: "Tim kiem"
         login_via: "Đăng nhập bằng facebook"
         signup: "Đăng ký"
+        logout: "Đăng xuất"
     password_resets:
       new:
         email: "Địa chỉ email"
@@ -81,4 +82,10 @@ mật khẩu của bạn sẽ vẫn như nó được."
     static_pages:
       search:
         nomatch: "Không thể tìm thấy thực phẩm phù hợp với từ khoá của bạn"
-
+      home:
+        slider:
+          price: "Giá"
+          chef: "Đầu bếp"
+          new_food: "Món mới"
+          hot_food: "Món đặt nhiều"
+          hot_chef: "Đầu bếp nổi tiếng"
