@@ -4,12 +4,12 @@ class User < ApplicationRecord
   before_create :create_activation_digest
   has_many :comment_foods
   has_many :orders
+  has_secure_password
   validates :name ,presence: true, length: {maximum: 30}
   validates :username, presence: true, length: {minimum: 6}
-  validates :password, presence: true, length: {minimum: 8}
+  validates :password, presence: true, length: {minimum: 8}, allow_blank: true
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
-  validates :email, presence: true, length: {maximum: 255}, format: {with: VALID_EMAIL_REGEX}
-  has_secure_password
+  validates :email, length: {maximum: 255}, format: {with: VALID_EMAIL_REGEX}, allow_blank: true
 
   def User.digest string
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST : BCrypt::Engine.cost
@@ -18,6 +18,16 @@ class User < ApplicationRecord
 
   def User.new_token
     SecureRandom.urlsafe_base64
+  end
+
+  def User.auth_facebook user_id, name
+    @user = User.find_or_create_by(username: user_id) do |usr|
+      usr.name = name
+      usr.username = user_id
+      pass_digest = User.digest(user_id + name)
+      usr.password = pass_digest
+    end
+    @user
   end
 
   def remember
@@ -45,7 +55,9 @@ class User < ApplicationRecord
 
   private
     def downcase_email
-      self.email = email.downcase
+      unless email.nil?
+        self.email = email.downcase
+      end
     end
 
     def create_activation_digest
