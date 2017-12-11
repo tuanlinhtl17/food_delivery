@@ -23,7 +23,7 @@ gem "jbuilder", "~> 2.5"
 
 gem "bcrypt", "~> 3.1"
 
-gem "bootstrap-sass", '3.3.7'
+gem "bootstrap-sass", "3.3.7"
 
 gem "mysql2", ">= 0.3.18", "< 0.5"
 
@@ -32,6 +32,10 @@ gem "i18n", "~> 0.7.0"
 gem "jquery-rails", "~> 4.3"
 
 gem "font-awesome-rails"
+
+gem "kaminari"
+
+gem "bootstrap-kaminari-views"
 
 group :development, :test do
 
