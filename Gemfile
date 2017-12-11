@@ -29,6 +29,10 @@ gem "mysql2", ">= 0.3.18", "< 0.5"
 
 gem "i18n", "~> 0.7.0"
 
+gem "jquery-rails", "~> 4.3"
+
+gem "font-awesome-rails"
+
 group :development, :test do
 
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
