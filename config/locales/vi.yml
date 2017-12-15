@@ -58,6 +58,9 @@ mật khẩu của bạn sẽ vẫn như nó được."
     layouts:
         login: "Đăng nhập"
         close: "Đóng"
+        search_form:
+          placeholder: "Tìm kiếm các loại thực phẩm yêu thích hoặc danh mục thực phẩm của bạn"
+          button: "Tìm kiếm"
     password_resets:
       new:
         email: "Địa chỉ email"
@@ -68,3 +71,7 @@ mật khẩu của bạn sẽ vẫn như nó được."
         password: "Mật khẩu mới"
         password_confirmation: "Xác nhận mật khẩu"
         submit: "Cập nhật mật khẩu"
+    static_pages:
+      search:
+        nomatch: "Không thể tìm thấy thực phẩm phù hợp với từ khoá của bạn"
+
