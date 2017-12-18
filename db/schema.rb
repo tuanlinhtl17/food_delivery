@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171206124242) do
+ActiveRecord::Schema.define(version: 20171207163509) do
 
   create_table "carts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.bigint "users_id"
@@ -84,8 +84,10 @@ ActiveRecord::Schema.define(version: 20171206124242) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "activation_digest"
-    t.boolean "activated", default: true
+    t.boolean "activated", default: false
     t.datetime "activated_at"
+    t.string "reset_digest"
+    t.datetime "reset_sent_at"
   end
 
   add_foreign_key "carts", "foods"

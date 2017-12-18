@@ -1,21 +1,21 @@
-<div class="modal fade" id="loginModal" role="dialog">
+<div class="modal fade" id="signupModal" role="dialog">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
           <ul class="nav nav-tabs">
-            <li class="active"><a data-toggle="tab" href="#login-login"><%= t "views.layouts.login" %></a></li>
-            <li><a data-toggle="tab" href="#signup-login"><%= t "views.layouts.signup" %></a></li>
+            <li class="active"><a data-toggle="tab" href="#signup-signup"><%= t "views.layouts.signup" %></a></li>
+            <li><a data-toggle="tab" href="#login-signup"><%= t "views.layouts.login" %></a></li>
           </ul>
       </div>
       <div class="form-login">
         <div id="form-modal">
           <div class="tab-content">
-            <div id="login-login" class="tab-pane fade in active">
-              <%= render "layouts/login" %>
-            </div>
-            <div id="signup-login" class="tab-pane fade">
+            <div id="signup-signup" class="tab-pane fade in active">
               <%= render "layouts/signup" %>
+            </div>
+            <div id="login-signup" class="tab-pane fade">
+              <%= render "layouts/login" %>
             </div>
           </div>
         </div>

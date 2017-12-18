@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
         if user.activated?
           log_in user
           params[:session][:remember_me] == "1" ? remember(user) : forget(user)
-          redirect_to user
+          redirect_to user_url(user.id)
         else
           message  = t("controllers.sessions.create.message1")
           message += t("controllers.sessions.create.message2")
