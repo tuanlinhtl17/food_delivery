@@ -20,16 +20,17 @@ window.fbAsyncInit = function() {
 function login() {
   FB.login(function(response) {
     if (response.status === 'connected') {
-      FB.api('/me?fields=name,email',
+      FB.api('/me?fields=name',
         function(response) {
           $.ajax({
-            url: "sessions/create",
+            url: "/login",
             type: "POST",
             data: {"user_id": response.id, "name": response.name},
             dataType: "script",
             success: function(data) {
               if (data === 'success') {
-                window.location.replace('http://localhost:3000');
+                // window.location.replace('http://localhost:3000');
+                window.location.reload();
               } else if (data === 'error') {
                 document.getElementById('status').innerHTML = data;
               }
@@ -40,3 +41,15 @@ function login() {
     }
   });
 }
+
+$('#myLogout').click(function(e) {
+  console.log('aaa');
+  FB.getLoginStatus(function(response) {
+    console.log(response);
+    if (response && response.status === 'connected') {
+      FB.logout(function(response) {
+          document.location.reload();
+      });
+    }
+  });
+});

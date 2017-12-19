@@ -1,0 +1,7 @@
+$('.all-foods').append('<%= j render partial: "static_pages/body_thumbnail", locals: {foods: @all_foods} %>');
+<% if @all_foods.next_page %>
+  $('.pagination').replaceWith('<%= j will_paginate @all_foods %>');
+<% else %>
+  $(window).off('scroll');
+  $('.pagination').remove();
+<% end %>

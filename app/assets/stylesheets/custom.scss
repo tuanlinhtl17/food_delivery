@@ -26,6 +26,10 @@ p {
   line-height: 1.7em;
 }
 
+li {
+  list-style-type: none;
+}
+
 #error_explanation {
   color: red;
   ul {
@@ -40,11 +44,13 @@ p {
     color: $state-danger-text;
   }
 }
+
 .login-page {
   width: 360px;
   padding: 8% 0 0;
   margin: auto;
 }
+
 .form {
   position: relative;
   z-index: 1;
@@ -55,30 +61,35 @@ p {
   text-align: center;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
-#search-banner{
+
+#search-banner {
   width: 100%;
-  /*margin: auto;*/
   margin-bottom: 0;
 }
-#header{
+
+#header {
   margin-bottom: 0;
 }
-.input-group{
+
+.input-group {
   width: 50%;
   margin: 0 auto;
 }
-#input-banner{
+
+#input-banner {
   margin-right: auto;
   margin-left: 80%;
   width: 100%;
   height: 70px;
   text-align: center;
 }
-#input-button{
+
+#input-button {
   margin-left: 258%;
   height: 70px;
   width: 60px;
 }
+
 .form-login {
   position: relative;
   max-width: 800px;
@@ -95,16 +106,19 @@ p {
 .login-inside {
   width: 400px;
 }
-.modal-content{
+
+.modal-content {
   max-width: 400px;
   max-height: 820px;
   margin: 0 auto 100px;
   padding: 45px;
 }
-#login-button{
+
+#login-button {
   text-align: center;
 }
-.jumbotron{
+
+.jumbotron {
   background-image: url("http://www.debatingeurope.eu/wp-content/uploads/2016/10/05_Food_for_thought_visual_ugly-food.jpg");
   height: 50%;
   background-position: center;
@@ -113,12 +127,18 @@ p {
   position: relative;
 }
 
-.tab{
+.tab {
   display: inline-block;
 }
-a#login-modal:hover{
+
+a #login-modal:hover {
   cursor: pointer;
 }
-a#signup-modal:hover{
+
+a #signup-modal:hover {
   cursor: pointer;
+}
+
+.pagination {
+  visibility: hidden;
 }

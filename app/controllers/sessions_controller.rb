@@ -31,7 +31,7 @@ class SessionsController < ApplicationController
         log_in user
         message  = t("controllers.sessions.create.message1")
         message += t("controllers.sessions.create.message2")
-        redirect_to user
+        redirect_to root_url
       rescue
         flash.now[:danger] = t("controllers.sessions.create.danger")
       end
@@ -40,7 +40,7 @@ class SessionsController < ApplicationController
 
   def destroy
     log_out if logged_in?
-    redirect_to login_url
+    redirect_to root_url
   end
 
   def new

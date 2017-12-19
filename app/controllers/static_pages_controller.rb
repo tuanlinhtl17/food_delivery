@@ -1,6 +1,14 @@
 class StaticPagesController < ApplicationController
   def home
-    @foods = Food.all
+    @new_foods = Food.newfood
+    @hot_foods = Food.hotfood
+    @hot_chefs = User.hotchef
+    @all_foods = Food.all.paginate page: params[:page], per_page: 18
+
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def search

@@ -36,4 +36,10 @@ module SessionsHelper
     session.delete :user_id
     @current_user = nil
   end
+
+  def present model
+    klass = "#{model.class}Presenter".constantize
+    presenter = klass.new(model).get_info
+    yield(presenter) if block_given?
+  end
 end

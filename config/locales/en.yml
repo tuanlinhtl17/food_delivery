@@ -68,6 +68,7 @@ your password will stay as it is."
         search: "Search......everything"
         login_via: "Login via Facebook"
         signup: "Sign up"
+        logout: "Logout"
     password_resets:
       new:
         email: "Email address"
@@ -81,4 +82,10 @@ your password will stay as it is."
     static_pages:
       search:
         nomatch: "Can't find foods match your keyword"
-
+      home:
+        slider:
+          price: "Price"
+          chef: "Chef"
+          new_food: "New food"
+          hot_food: "Hot food"
+          hot_chef: "Hot chef"

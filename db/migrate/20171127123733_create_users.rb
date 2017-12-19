@@ -9,6 +9,7 @@ class CreateUsers < ActiveRecord::Migration[5.1]
       t.string :address
       t.string :phone_number
       t.string :remember_digest
+      t.string :avatar_url
       t.timestamps
     end
   end

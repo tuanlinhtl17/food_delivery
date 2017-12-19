@@ -28,14 +28,16 @@ gem "bootstrap-sass", "3.3.7"
 gem "mysql2", ">= 0.3.18", "< 0.5"
 
 gem "i18n", "~> 0.7.0"
+
 gem "jquery-rails", "~> 4.3", ">= 4.3.1"
+
 gem "bootstrap", "~> 4.0.0.alpha6"
 
 gem "font-awesome-rails"
 
-gem "kaminari"
+gem "will_paginate"
 
-gem "bootstrap-kaminari-views"
+gem "bootstrap-will_paginate"
 
 group :development, :test do
 

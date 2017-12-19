@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(version: 20171207163509) do
     t.string "img_url"
     t.float "price", limit: 24
     t.bigint "food_category_id"
+    t.bigint "user_id"
     t.float "rating_avg", limit: 24
     t.integer "rate_count"
     t.datetime "created_at", null: false
@@ -87,6 +88,7 @@ ActiveRecord::Schema.define(version: 20171207163509) do
     t.boolean "activated", default: false
     t.datetime "activated_at"
     t.string "reset_digest"
+    t.string "avatar_url"
     t.datetime "reset_sent_at"
   end
 
@@ -97,4 +99,5 @@ ActiveRecord::Schema.define(version: 20171207163509) do
   add_foreign_key "foods", "food_categories"
   add_foreign_key "order_details", "foods"
   add_foreign_key "order_details", "orders"
+  add_foreign_key "foods", "users"
 end

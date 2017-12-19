@@ -4,12 +4,17 @@ class User < ApplicationRecord
   before_create :create_activation_digest
   has_many :comment_foods
   has_many :orders
+  has_many :foods
   has_secure_password
   validates :name ,presence: true, length: {maximum: 30}
   validates :username, presence: true, length: {minimum: 6}
   validates :password, presence: true, length: {minimum: 8}, allow_blank: true
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, length: {maximum: 255}, format: {with: VALID_EMAIL_REGEX}, allow_blank: true
+
+  scope :hotchef, -> {
+    where(usertype: 3).joins(:foods).group(:id).order("SUM(rating_avg) DESC").limit(4)
+  }
 
   def User.digest string
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST : BCrypt::Engine.cost
