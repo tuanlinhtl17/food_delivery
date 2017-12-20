@@ -16,6 +16,9 @@ en:
         message1: "Account not activated. "
         message2: "Check your email for the activation link."
         danger: "Invalid email/password combination"
+        success: "Login successful"
+      destroy:
+        success: "You logged out"
     password_resets:
       create:
         sent: "Email sent with password reset instructions"
