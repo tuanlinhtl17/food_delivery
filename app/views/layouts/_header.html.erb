@@ -22,7 +22,10 @@
         <li><a href="#loginModal" data-toggle="modal" id="login-button"><i class="fa fa-sign-in fa-2x" aria-hidden="true"></i> <%= t("views.layouts.login") %></a></li>
         <li><a href="#signupModal" data-toggle="modal" ><i class="fa fa-user-plus fa-2x"></i> <%= t "views.layouts.signup"%></a></li>
       <% else %>
-        <li id="myLogout"><a href="<%= logout_path %>"><i class="fa fa-sign-out fa-2x" aria-hidden="true""></i><%= t("views.layouts.logout") %></a></li>
+        <li><%= link_to logout_path, remote: true, method: :delete do %>
+              <i class="fa fa-sign-out fa-2x" aria-hidden="true"></i><%= t "views.layouts.logout" %>
+            <% end %>
+        </li>
       <% end %>
       <li class="dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" id="language"><i class="fa fa-globe fa-2x" aria-hidden="true"></i> <%= t("views.layouts.language")%><span class="caret"></span></a>

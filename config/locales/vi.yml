@@ -16,6 +16,9 @@ vi:
         message1: "Tài khoản chưa được xác nhận. "
         message2: "Kiểm tra email của bạn để biết liên kết xác nhận."
         danger: "Kết hợp email/mật khẩu không hợp lệ"
+        success: "Đăng nhập thành công"
+      destroy:
+        success: "Bạn đã đăng xuất"
     password_resets:
       create:
         sent: "Email được gửi bằng hướng dẫn đặt lại mật khẩu"
