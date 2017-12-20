@@ -117,3 +117,11 @@ your password will stay as it is."
           price: "Price"
           chef: "Chef"
           delivery_fee: "DELIVERY FEE"
+    foods:
+      show:
+        comment: "Comments"
+        image: "Images"
+        setting: "Setting"
+        picture: "Picture"
+        call: "Call"
+        share: "Share"

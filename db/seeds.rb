@@ -97,4 +97,15 @@ end
                       order_id: order_id,
                       food_id: food_id,
                       price: price)
+
+end
+Food.all.each do |f|
+  User.limit(5).each do |u|
+    f.comment_foods.create(content: Faker::Lorem.sentence(50),user_id: u.id)
+    f.comment_foods.create(content: Faker::Lorem.sentence(50),user_id: u.id)
+    f.comment_foods.create(content: Faker::Lorem.sentence(50),user_id: u.id)
+    f.comment_foods.create(content: Faker::Lorem.sentence(50),user_id: u.id)
+    f.comment_foods.create(content: Faker::Lorem.sentence(50),user_id: u.id)
+    f.comment_foods.create(content: Faker::Lorem.sentence(50),user_id: u.id)
+  end
 end

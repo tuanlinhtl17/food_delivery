@@ -150,14 +150,15 @@ a #signup-modal:hover {
   }
   font-size: 1.25em;
 
-/*.container-fluid #menu-panel {
-  border: 1px solid #eee;
-  padding: 15px 5px 15px 15px;
-  width: 235px;
-  margin-right: 10px;
-  margin-top: 48px;
-  position: absolute;
-}*/
+  /*.container-fluid #menu-panel {
+    border: 1px solid #eee;
+    padding: 15px 5px 15px 15px;
+    width: 235px;
+    margin-right: 10px;
+    margin-top: 48px;
+    position: absolute;
+  }*/
+}
 #food-body{
   margin-left: 50.5px;
 }
@@ -188,10 +189,19 @@ a #signup-modal:hover {
 .col-md-8 ul li {
   margin-bottom: 30px;
 }
+
 #comment-food {
   background: #FFFFFF;
   padding: 15px;
 }
 #comment-picture {
   padding: 20px;
+}
+
+#picture-comment {
+  padding: 20px;
+}
+#show-food-body {
+  padding-top: 50px;
+  background: #eee;
 }

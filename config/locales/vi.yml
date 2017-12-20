@@ -116,3 +116,11 @@ mật khẩu của bạn sẽ vẫn như nó được."
           price: "Giá"
           chef: "Đầu bếp"
           delivery_fee: "PHÍ VẬN CHUYỂN"
+    foods:
+      show:
+          comment: "Bình luận"
+          image: "Hình ảnh"
+          setting: "Lựa chọn"
+          picture: "Ảnh"
+          call: "Gọi"
+          share: "Chia sẻ"
