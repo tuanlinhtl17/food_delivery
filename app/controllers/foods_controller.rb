@@ -5,7 +5,6 @@ class FoodsController < ApplicationController
   end
 
   def index
-    @foods = []
     @foods = Food.search params[:search]
   end
 end
