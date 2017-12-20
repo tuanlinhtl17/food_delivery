@@ -5,7 +5,9 @@ Rails.application.routes.draw do
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
   resources :foods
+  resources :order_details
   resources :users
+  resources :orders
   resources :account_activations
   resources :password_resets, only: [:new, :create, :edit, :update]
   resources :food_categories
