@@ -8,5 +8,6 @@ Rails.application.routes.draw do
   resources :users
   resources :account_activations
   resources :password_resets, only: [:new, :create, :edit, :update]
+  resources :food_categories
   match "search(/:search)", :to => "static_pages#search", :as => :search, via: [:get, :post]
 end

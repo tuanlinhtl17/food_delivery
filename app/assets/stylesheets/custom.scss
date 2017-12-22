@@ -103,6 +103,7 @@ li {
     }
   }
 }
+
 .login-inside {
   width: 400px;
 }
@@ -141,4 +142,11 @@ a #signup-modal:hover {
 
 .pagination {
   visibility: hidden;
+}
+
+#food-header {
+  img {
+    height: 300px;
+  }
+  font-size: 1.25em;
 }

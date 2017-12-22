@@ -92,3 +92,11 @@ mật khẩu của bạn sẽ vẫn như nó được."
           new_food: "Món mới"
           hot_food: "Món đặt nhiều"
           hot_chef: "Đầu bếp nổi tiếng"
+    foods:
+      show:
+        header:
+          category: "Loại món"
+          rate: "lượt bình chọn"
+          price: "Giá"
+          chef: "Đầu bếp"
+          delivery_fee: "PHÍ VẬN CHUYỂN"
