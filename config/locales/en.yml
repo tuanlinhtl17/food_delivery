@@ -72,6 +72,14 @@ your password will stay as it is."
         login_via: "Login via Facebook"
         signup: "Sign up"
         logout: "Logout"
+        header:
+          all: "All"
+          lunch: "Lunch"
+          drink: "Drink"
+          dessert: "Dessert"
+          new_order: "New Orders"
+          done: "Orders I've done"
+          processing: "In process"
     password_resets:
       new:
         email: "Email address"
@@ -92,6 +100,15 @@ your password will stay as it is."
           new_food: "New food"
           hot_food: "Hot food"
           hot_chef: "Hot chef"
+        show_orders:
+          all: "All Orders"
+          destination: "Destination:"
+          customer: "Customer:"
+          employee: "Employee:"
+          details: "Order Details:"
+          quantity: "Quantity:"
+          price_each: "Price Each:"
+          total_money: "Total Money:"
     foods:
       show:
         header:
