@@ -27,12 +27,12 @@ User.create(name: "Chien",
 
 
 User.create(name: "Linh",
-              email: "example@gmail.com",
-              usertype: 3,
-              password: "12345678",
-              password_confirmation: "12345678",
-              username: "Linh17",
-              avatar_url: "http://www.agentpipeline.com/wp-content/uploads/2015/10/Man-Avatar.png")
+            email: "example@gmail.com",
+            usertype: 3,
+            password: "12345678",
+            password_confirmation: "12345678",
+            username: "Linh17",
+            avatar_url: "http://www.agentpipeline.com/wp-content/uploads/2015/10/Man-Avatar.png")
 
 User.create(name: "Chien",
             email: "chien@gmail.com",

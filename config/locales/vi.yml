@@ -108,6 +108,11 @@ mật khẩu của bạn sẽ vẫn như nó được."
           details: "Chi tiết đơn đặt hàng:"
           quantity: "Số lượng:"
           price_each: "Giá:"
+        cart:
+          amount: "Số lượng"
+          add_to_cart: "Thêm vào giỏ"
+          success: "Đặt hàng thành công"
+          error: "Đã xảy ra lỗi vui lòng thử lại sau"
     foods:
       show:
         header:
@@ -116,11 +121,9 @@ mật khẩu của bạn sẽ vẫn như nó được."
           price: "Giá"
           chef: "Đầu bếp"
           delivery_fee: "PHÍ VẬN CHUYỂN"
-    foods:
-      show:
-          comment: "Bình luận"
-          image: "Hình ảnh"
-          setting: "Lựa chọn"
-          picture: "Ảnh"
-          call: "Gọi"
-          share: "Chia sẻ"
+        comment: "Bình luận"
+        image: "Hình ảnh"
+        setting: "Lựa chọn"
+        picture: "Ảnh"
+        call: "Gọi"
+        share: "Chia sẻ"

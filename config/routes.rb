@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get "/login", to: "sessions#new"
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
+  post "/create_cart", to: "carts#create"
   resources :foods
   resources :order_details
   resources :users
