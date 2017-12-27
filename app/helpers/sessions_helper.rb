@@ -1,7 +1,9 @@
 module SessionsHelper
   def log_in user
     session[:user_id] = user.id
-    Cart.cart_amount_session(request.session_options[:id]).update_all(user_id: user.id, session_id: nil)
+    if user.user_type == 4
+      Cart.cart_amount_session(request.session_options[:id]).update_all(user_id: user.id, session_id: nil)
+    end
   end
 
   def current_user

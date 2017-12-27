@@ -17,6 +17,14 @@ User.create(name: "Hieu",
             activated: true,
             avatar_url: "http://www.agentpipeline.com/wp-content/uploads/2015/10/Man-Avatar.png")
 
+User.create(name: "Employee",
+            email:"hieu12@gmail.com", user_type: "2",
+            password: "12345678",
+            password_confirmation: "12345678",
+            username: "employee",
+            activated: true,
+            avatar_url: "http://www.agentpipeline.com/wp-content/uploads/2015/10/Man-Avatar.png")
+
 User.create(name: "Linh",
             email: "example@gmail.com",
             user_type: 3,
@@ -85,9 +93,9 @@ end
   food_id = 1
   price = 2
   OrderDetail.create(quantity: quantity,
-                      order_id: order_id,
-                      food_id: food_id,
-                      price: price)
+                     order_id: order_id,
+                     food_id: food_id,
+                     price: price)
 
 end
 Food.all.each do |f|

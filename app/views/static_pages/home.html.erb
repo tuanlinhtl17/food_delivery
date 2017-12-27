@@ -1,6 +1,5 @@
-<%= render "layouts/banner" %>
 <% if logged_in? && current_user.shipper? %>
-  <%= render "employee_home_page"%>
+  <%= render "employee_home_page" %>
 <% else %>
-  <%= render "customer_home_page"%>
+  <%= render "customer_home_page" %>
 <% end %>

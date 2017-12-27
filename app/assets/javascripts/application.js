@@ -16,6 +16,7 @@
 //= require i18n
 //= require i18n.js
 //= require i18n/translations
+//= require jquery-ui
 //= require bootstrap
 //= require turbolinks
 //= require_tree .
