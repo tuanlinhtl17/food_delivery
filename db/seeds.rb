@@ -10,25 +10,16 @@ FoodCategory.create name: "Ran"
 FoodCategory.create(name: "Truyen thong")
 
 User.create(name: "Hieu",
-            email:"hieu@gmail.com", usertype: "3",
+            email:"hieu@gmail.com", user_type: "3",
             password: "12345678",
             password_confirmation: "12345678",
             username: "hieuhieu",
             activated: true,
             avatar_url: "http://www.agentpipeline.com/wp-content/uploads/2015/10/Man-Avatar.png")
 
-User.create(name: "Chien",
-            email:"hieu1@gmail.com", usertype: 2,
-            password: "12345678",
-            password_confirmation: "12345678",
-            username: "employee",
-            activated: true,
-            avatar_url: "http://www.agentpipeline.com/wp-content/uploads/2015/10/Man-Avatar.png")
-
-
 User.create(name: "Linh",
             email: "example@gmail.com",
-            usertype: 3,
+            user_type: 3,
             password: "12345678",
             password_confirmation: "12345678",
             username: "Linh17",
@@ -36,7 +27,7 @@ User.create(name: "Linh",
 
 User.create(name: "Chien",
             email: "chien@gmail.com",
-            usertype: 3,
+            user_type: 3,
             password: "12345678",
             password_confirmation: "12345678",
             username: "ChienChien",
@@ -44,7 +35,7 @@ User.create(name: "Chien",
 
 User.create(name: "LinhLinh",
             email: "Linh@gmail.com",
-            usertype: 3,
+            user_type: 3,
             password: "12345678",
             password_confirmation: "12345678",
             username: "Linh12",
@@ -52,7 +43,7 @@ User.create(name: "LinhLinh",
 
 User.create(name: "Quang",
             email: "quang@gmail.com",
-            usertype: 3,
+            user_type: 3,
             password: "12345678",
             password_confirmation: "12345678",
             username: "Quang13",

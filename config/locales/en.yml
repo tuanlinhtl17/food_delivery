@@ -72,6 +72,7 @@ your password will stay as it is."
         login_via: "Login via Facebook"
         signup: "Sign up"
         logout: "Logout"
+        profile: "Profile"
         header:
           all: "All"
           lunch: "Lunch"
@@ -133,3 +134,9 @@ your password will stay as it is."
           pay: "Order"
           info: "Order information"
           total: "Total"
+    users:
+      show:
+        email: "Email"
+        phone_number: "Phone number"
+        address: "Address"
+        by_chef: "All food by this chef"

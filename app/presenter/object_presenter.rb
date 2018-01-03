@@ -9,4 +9,12 @@ class ObjectPresenter
     @attr1 = attr1
     @attr2 = attr2
   end
+
+  def food?
+    self.class_name == "Food"
+  end
+
+  def user?
+    self.class_name == "User"
+  end
 end

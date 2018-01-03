@@ -72,6 +72,7 @@ mật khẩu của bạn sẽ vẫn như nó được."
         login_via: "Đăng nhập bằng facebook"
         signup: "Đăng ký"
         logout: "Đăng xuất"
+        profile: "Cá nhân"
         header:
           all: "Tất cả"
           lunch: "Cơm trưa"
@@ -132,3 +133,9 @@ mật khẩu của bạn sẽ vẫn như nó được."
         pay: "Thanh toán"
         info: "Thông tin đơn hàng"
         total: "Tổng tiền"
+    users:
+      show:
+        email: "Email"
+        phone_number: "Số điện thoại"
+        address: "Địa chỉ"
+        by_chef: "Các món ăn của đầu bếp này"

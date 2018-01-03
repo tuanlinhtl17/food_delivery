@@ -1,1 +1,6 @@
 delivery_fee: "5,000 đ/km"
+user_type:
+  admin: 1
+  shipper: 2
+  chef: 3
+  customer: 4

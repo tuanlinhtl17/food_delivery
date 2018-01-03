@@ -1,7 +1,8 @@
 class UsersController < ApplicationController
   def show
     @user = User.find_by id: params[:id]
-    redirect_to root_url if @user.nil?
+    @foods = Food.by_chef @user.id if @user && @user.chef?
+    redirect_to root_url unless @user
   end
 
   def new

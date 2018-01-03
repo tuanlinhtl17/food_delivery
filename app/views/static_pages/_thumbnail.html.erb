@@ -4,18 +4,20 @@
       <li class="col-sm-3">
         <div class="casing">
           <div class="thumbnail">
-            <a href="/foods/<%= obj.id %>" alt="<%= obj.name %>"><img src="<%= obj.img_url %>"></a>
+            <%= link_to "/#{obj.class_name.downcase}s/#{obj.id}" do %>
+              <%= image_tag obj.img_url, alt: obj.name %>
+            <% end %>
           </div>
           <div class="caption">
             <h4><a href="/<%= "#{obj.class_name.downcase}s/#{obj.id}" %>" class="text-center"><%= obj.name %></a></h4>
-            <% if obj.class_name == "Food"%>
+            <% if obj.food?%>
               <div class="row cart">
                 <div class="col-md-9"><p><%= t("views.static_pages.home.slider.price") + " #{obj.attr1}" %></p></div>
                 <div class="col-md-3">
                   <button value="<%= obj.id %>" class="show-add" data-toggle="modal" data-target="#addFood"><i class="fa fa-cart-plus fa-2x" aria-hidden="true"></i></button>
                 </div>
               </div>
-              <%= link_to "#{t("views.static_pages.home.slider.chef")}: #{obj.attr2.name}", obj.attr2, class: "btn btn-mini" %>
+              <%= link_to "#{t "views.static_pages.home.slider.chef"}: #{obj.attr2.name}", obj.attr2, class: "btn btn-mini" %>
             <% else %>
               <p><%= "Email: #{obj.attr1}" %></p>
               <a class="btn btn-mini" href="/<%= "#{obj.class_name.downcase}s/#{obj.id}" %>"><%= obj.attr2 %></a>
