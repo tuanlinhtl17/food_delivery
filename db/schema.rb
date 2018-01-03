@@ -98,7 +98,7 @@ ActiveRecord::Schema.define(version: 20171227123539) do
   end
 
   add_foreign_key "carts", "foods"
-  add_foreign_key "carts", "users"
+  add_foreign_key "carts", "users", column: "user_id"
   add_foreign_key "comment_foods", "foods"
   add_foreign_key "comment_foods", "users"
   add_foreign_key "foods", "food_categories"

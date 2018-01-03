@@ -127,3 +127,8 @@ mật khẩu của bạn sẽ vẫn như nó được."
         picture: "Ảnh"
         call: "Gọi"
         share: "Chia sẻ"
+    carts:
+      index:
+        pay: "Thanh toán"
+        info: "Thông tin đơn hàng"
+        total: "Tổng tiền"
