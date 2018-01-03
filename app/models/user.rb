@@ -8,11 +8,10 @@ class User < ApplicationRecord
   has_many :customer, through: :active_relationships, source: :customer
   has_many :shippers, through: :active_relationships, source: :employee
 
-  has_many :active_relationships, class_name: "Order",
-                                  foreign_key: "customer_id"
-  has_many :passive_relationships, class_name: "Order",
-                                  foreign_key: "employee_id"
+  has_many :active_relationships, class_name: "Order",foreign_key: "customer_id"
+  has_many :passive_relationships, class_name: "Order",foreign_key: "employee_id"
   has_many :carts
+
   has_secure_password
   validates :name ,presence: true, length: {maximum: 30}
   validates :username, presence: true, length: {minimum: 6}
@@ -76,14 +75,14 @@ class User < ApplicationRecord
   end
 
   private
-    def downcase_email
-      unless email.nil?
-        self.email = email.downcase
-      end
+  def downcase_email
+    unless email.nil?
+      self.email = email.downcase
     end
+  end
 
-    def create_activation_digest
-      self.activation_token  = User.new_token
-      self.activation_digest = User.digest(activation_token)
-    end
+  def create_activation_digest
+    self.activation_token  = User.new_token
+    self.activation_digest = User.digest(activation_token)
+  end
 end

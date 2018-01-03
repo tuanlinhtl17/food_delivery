@@ -128,3 +128,8 @@ your password will stay as it is."
         picture: "Picture"
         call: "Call"
         share: "Share"
+    carts:
+        index:
+          pay: "Order"
+          info: "Order information"
+          total: "Total"
