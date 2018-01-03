@@ -1,6 +1,7 @@
 module SessionsHelper
   def log_in user
     session[:user_id] = user.id
+    Cart.cart_amount_session(request.session_options[:id]).update_all(user_id: user.id, session_id: nil)
   end
 
   def current_user
@@ -41,5 +42,13 @@ module SessionsHelper
     klass = "#{model.class}Presenter".constantize
     presenter = klass.new(model).get_info
     yield(presenter) if block_given?
+  end
+
+  def cart_amount
+    if logged_in?
+      cart_amount = Cart.cart_amount_user(current_user.id).size
+    else
+      cart_amount = Cart.cart_amount_session(request.session_options[:id]).size
+    end
   end
 end

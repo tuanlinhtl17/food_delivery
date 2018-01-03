@@ -109,6 +109,11 @@ your password will stay as it is."
           quantity: "Quantity:"
           price_each: "Price Each:"
           total_money: "Total Money:"
+        cart:
+          amount: "Amount"
+          add_to_cart: "Add to cart"
+          success: "Order success"
+          error: "An error occurred please try again later"
     foods:
       show:
         header:
@@ -117,8 +122,6 @@ your password will stay as it is."
           price: "Price"
           chef: "Chef"
           delivery_fee: "DELIVERY FEE"
-    foods:
-      show:
         comment: "Comments"
         image: "Images"
         setting: "Setting"
