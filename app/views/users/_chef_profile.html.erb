@@ -1,6 +1,19 @@
+<div class="row">
+  <aside class="col-md-8">
+    <section class="user_info">
+      <%= image_tag @user.avatar_url, alt: @user.name, class: "show_avatar" %>
+      <h1><%= @user.name %></h1>
+    </section>
+    <p><strong><%= t "views.users.show.email" %>:</strong> <%= @user.email %></p>
+    <p><strong><%= t "views.users.show.phone_number" %>:</strong> <%= @user.phone_number %></p>
+  </aside>
+</div>
+<hr>
+<h1 class="text-center"><%= t "views.users.show.by_chef" %></h1>
+
 <div class="thumb-layout">
-  <div class="row" style="display:flex; flex-wrap:wrap;">
-    <% foods.each do |food| %>
+  <div class="row">
+    <% @foods.each do |food| %>
       <div class="col-md-2 col-sm-4">
         <div class="thumbnail">
           <%= link_to food do %>
@@ -10,12 +23,8 @@
             <h4><%= link_to food.name, food, class: "text-center" %></h4>
             <div class="row cart">
               <div class="col-md-8"><span><%= t("views.static_pages.home.slider.price") + ": $#{food.price}" %></span></div>
-              <div class="col-md-4">
-                <button value="<%= food.id %>" class="show-add" data-toggle="modal" data-target="#addFood"><i class="fa fa-cart-plus fa-2x" aria-hidden="true"></i></button>
-              </div>
             </div>
             <br>
-            <span><%= link_to food.user.name, food.user %></span>
           </div>
         </div>
       </div>

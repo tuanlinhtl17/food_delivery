@@ -1,0 +1,13 @@
+<div class="row">
+  <aside class="col-md-8">
+    <section class="user_info">
+      <%= image_tag @user.avatar_url, alt: @user.name, class: "show_avatar" %>
+      <h1><%= @user.name %></h1>
+    </section>
+    <p><strong><%= t "views.users.show.email" %>:</strong> <%= @user.email %></p>
+    <p><strong><%= t "views.users.show.phone_number" %>:</strong> <%= @user.phone_number %></p>
+    <% if @user.customer? %>
+      <p><strong><%= t "views.users.show.address" %>:</strong> <%= @user.address %></p>
+    <% end %>
+  </aside>
+</div>

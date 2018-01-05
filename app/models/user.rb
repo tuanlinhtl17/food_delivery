@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  CUSTOMER_OR_SHIPPER = [2, 4]
+
   attr_accessor :remember_token, :activation_token, :reset_token
   before_save   :downcase_email
   before_create :create_activation_digest
@@ -20,26 +22,30 @@ class User < ApplicationRecord
   validates :email, length: {maximum: 255}, format: {with: VALID_EMAIL_REGEX}, allow_blank: true
 
   scope :hotchef, -> {
-    where(usertype: 3).joins(:foods).group(:id).order("SUM(rating_avg) DESC").limit(4)
+    where(user_type: Settings.user_type.chef).joins(:foods).group(:id).order("SUM(rating_avg) DESC").limit(4)
   }
 
-  def User.digest string
-    cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST : BCrypt::Engine.cost
-    BCrypt::Password.create(string, cost: cost)
-  end
-
-  def User.new_token
-    SecureRandom.urlsafe_base64
-  end
-
-  def User.auth_facebook user_id, name
-    @user = User.find_or_create_by(username: user_id) do |usr|
-      usr.name = name
-      usr.username = user_id
-      pass_digest = User.digest(user_id + name)
-      usr.password = pass_digest
+  class << self
+    def digest string
+      cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST : BCrypt::Engine.cost
+      BCrypt::Password.create(string, cost: cost)
     end
-    @user
+
+    def new_token
+      SecureRandom.urlsafe_base64
+    end
+
+    def auth_facebook user_id, name
+      @user = User.find_or_create_by(username: user_id) do |usr|
+        usr.name = name
+        usr.username = user_id
+        pass_digest = User.digest(user_id + name)
+        usr.user_type = Settings.user_type.customer
+        usr.avatar_url = "https://jsns.eu/components/com_jsn/assets/img/default.jpg"
+        usr.password = pass_digest
+      end
+      @user
+    end
   end
 
   def remember
@@ -74,11 +80,27 @@ class User < ApplicationRecord
     UserMailer.password_reset(self).deliver_now
   end
 
+  def chef?
+    self.user_type == Settings.user_type.chef
+  end
+
+  def shipper?
+    self.user_type == Settings.user_type.shipper
+  end
+
+  def admin?
+    self.user_type == Settings.user_type.admin
+  end
+
+  def customer?
+    self.user_type == Settings.user_type.customer
+  end
+
   private
+
   def downcase_email
-    unless email.nil?
-      self.email = email.downcase
-    end
+    return unless email
+    self.email = email.downcase!
   end
 
   def create_activation_digest

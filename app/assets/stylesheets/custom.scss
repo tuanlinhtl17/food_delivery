@@ -218,3 +218,15 @@ a #signup-modal:hover {
 .badge {
   background-color: red;
 }
+
+.show_avatar {
+  height: 200px;
+  width: 200px;
+  float: left;
+  margin-right: 10px;
+}
+
+.thumb-layout {
+  display:flex;
+  flex-wrap:wrap;
+}

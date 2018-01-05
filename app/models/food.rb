@@ -18,4 +18,8 @@ class Food < ApplicationRecord
   scope :hotfood, -> {
     order("rating_avg DESC").limit(4)
   }
+
+  scope :by_chef, -> user_id {
+    where(user_id: user_id.to_s).order("rating_avg DESC")
+  }
 end
