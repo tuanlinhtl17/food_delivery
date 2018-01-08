@@ -11,7 +11,7 @@ class Cart < ApplicationRecord
   }
 
   scope :all_cart, -> {
-    where.not(session_id: null)
+    where.not(session_id: nil)
   }
 
   def Cart.total

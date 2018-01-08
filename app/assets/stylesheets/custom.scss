@@ -230,3 +230,28 @@ a #signup-modal:hover {
   display:flex;
   flex-wrap:wrap;
 }
+#cart-name {
+  position: relative;
+  display: inline-block;
+  width: 150px;
+  padding-left: 50px;
+}
+.container .show-cart {
+  position: relative;
+  display: inline-block;
+  width: 150px;
+}
+
+.price {
+  position: relative;
+  display: inline-block;
+  width: 150px;
+}
+
+.li-cart {
+  background-color: #eeeeee;
+}
+
+#delete-cart {
+
+}
