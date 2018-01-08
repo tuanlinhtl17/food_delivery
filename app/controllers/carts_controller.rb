@@ -40,6 +40,16 @@ class CartsController < ApplicationController
       raise ActiveRecord::Rollback
   end
 
+  def destroy
+    cart = Cart.find(params[:id])
+    cart.destroy
+    @cart_id = params[:id]
+    respond_to do |format|
+      format.html {redirect_to carts_url}
+      format.js
+    end
+  end
+
   private
   def update_cart
     Cart.all.each do |c|

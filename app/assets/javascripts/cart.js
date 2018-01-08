@@ -8,7 +8,7 @@ function charged(){
     price = $(".price");
     quantity = $(".quantity");
     for (var i = 0; i < price.length; i++){
-        totalPrice =totalPrice +  parseFloat(getPrice.exec(price[i].textContent)[0]) * parseFloat(quantity[i].value)
+        totalPrice =totalPrice +  parseFloat(getPrice.exec(price[i].textContent)[0]) * parseFloat(quantity[i].value) + " $"
     }
     $("#total").html(totalPrice)
 }
