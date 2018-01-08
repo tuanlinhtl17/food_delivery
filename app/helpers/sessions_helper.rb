@@ -53,4 +53,8 @@ module SessionsHelper
       cart_amount = Cart.cart_amount_session(request.session_options[:id]).size
     end
   end
+
+  def correct_user user
+    user == current_user && logged_in?
+  end
 end

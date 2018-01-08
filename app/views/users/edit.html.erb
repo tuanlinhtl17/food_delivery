@@ -1,0 +1,18 @@
+<hr>
+<div class="container">
+  <%= form_for @user do |f| %>
+    <%= f.text_field :name, class: "form-control", placeholder: t("views.users.new.name")%>
+    <br>
+    <%= f.email_field :email, class: "form-control", placeholder: t("views.users.new.email")%>
+    <br>
+    <%= f.text_field :phone_number, class: "form-control", placeholder: t("views.users.edit.phone_number") %>
+    <br>
+    <%= f.text_field :address, class: "form-control", placeholder: t("views.users.edit.address") %>
+    <br>
+    <%= f.password_field :password, class: "form-control", placeholder: t("views.users.new.password") %>
+    <br>
+    <%= f.password_field :password_confirmation, class: "form-control", placeholder: t("views.users.new.comfirmation") %>
+    <br>
+    <%= f.submit t("views.users.edit.update"), class: "btn btn-warning" %>
+  <% end %>
+</div>

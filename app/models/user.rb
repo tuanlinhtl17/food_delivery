@@ -50,7 +50,7 @@ class User < ApplicationRecord
 
   def remember
     self.remember_token = User.new_token
-    update_attributes(:remember_digest, User.digest(remember_token))
+    update_attributes(remember_digest: User.digest(remember_token))
   end
 
   def authenticated?(attribute, token)
@@ -100,7 +100,7 @@ class User < ApplicationRecord
 
   def downcase_email
     return unless email
-    self.email = email.downcase!
+    self.email = email.downcase
   end
 
   def create_activation_digest
