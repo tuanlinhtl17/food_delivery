@@ -53,7 +53,7 @@ User.create(name: "LinhLinh",
 
 User.create(name: "Quang",
             email: "quang@gmail.com",
-            user_type: 3,
+            user_type: 4,
             password: "12345678",
             password_confirmation: "12345678",
             username: "Quang13",

@@ -2,6 +2,10 @@
   <aside class="col-md-8">
     <section class="user_info">
       <%= image_tag @user.avatar_url, alt: @user.name, class: "show_avatar" %>
+      <hr>
+      <% if correct_user @user %>
+        <%= link_to t("views.users.show.edit"), edit_user_path(@user), class: "btn btn-warning" %>
+      <% end %>
       <h1><%= @user.name %></h1>
     </section>
     <p><strong><%= t "views.users.show.email" %>:</strong> <%= @user.email %></p>

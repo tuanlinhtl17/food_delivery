@@ -54,7 +54,12 @@ module SessionsHelper
     end
   end
 
+
   def newest_annoucement
     Annoucement.newest_annoucement
+  end
+
+  def correct_user user
+    user == current_user && logged_in?
   end
 end
