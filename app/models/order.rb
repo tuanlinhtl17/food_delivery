@@ -3,9 +3,9 @@ class Order < ApplicationRecord
   validates :total_money, presence: true
   validates :customer_id, presence: true
   has_many :order_details, dependent: :destroy
-  belongs_to :employee, class_name: "User"
-  belongs_to :customer, class_name: "User"
-
+  accepts_nested_attributes_for :order_details, allow_destroy: true
+  belongs_to :employee, class_name: "User", optional: true
+  belongs_to :customer, class_name: "User", optional: true
   scope :new_order, ->{
     where "status LIKE ?", 1
   }

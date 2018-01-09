@@ -14,6 +14,6 @@ Rails.application.routes.draw do
   resources :password_resets, only: [:new, :create, :edit, :update]
   resources :food_categories
   match "search(/:search)", :to => "static_pages#search", :as => :search, via: [:get, :post]
-  put "carts", to: "carts#update"
+  patch "carts", to: "carts#update"
   resources :carts, only: [:destroy, :index]
 end

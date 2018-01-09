@@ -1,6 +1,5 @@
 en:
   date_format: "%d/%m/%Y"
-
   mailers:
     user_mailer:
       activate: "Account activation"
@@ -30,6 +29,10 @@ en:
         success: "Password has been reset."
       check_expiration:
         danger: "Password reset has expired."
+    orders:
+      create:
+        success: "Order success"
+        lost_info: "Missing information"
 
   views:
     user_mailer:
@@ -146,13 +149,32 @@ your password will stay as it is."
         call: "Call"
         share: "Share"
     carts:
-      index:
-        pay: "Order"
-        info: "Order information"
-        total: "Total"
+        index:
+          pay: "Order"
+          info: "Order information"
+          total: "Total"
+
+    users:
+      show:
+        email: "Email"
+        phone_number: "Phone number"
+        address: "Address"
+        by_chef: "All food by this chef"
     orders:
       created_at: "Created on:"
       danger: "You do not have permission to access this page !"
       show:
         customer_info: "Customer information"
         order_details: "Order details"
+      new:
+        dish: "Dish"
+        phone: "Phone number"
+        price: "Price"
+        quantity: "Quantity"
+        order: "Order"
+        total: "Toal"
+        example: "Example: 171 Pham Hung, Cau Giay, Ha Noi"
+        address: "Address"
+        shipping_address: "Shipping address"
+        select_address: "Select the place of receipt"
+        info_order: "Information line"

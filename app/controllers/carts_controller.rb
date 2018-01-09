@@ -28,16 +28,13 @@ class CartsController < ApplicationController
   end
 
   def update
-    hash = Hash.new
-    params[:cart][:id].each_with_index {|item,index|
-      hash[item] = {quantity: params[:cart][:quantity][index]}
-    }
-    Cart.transaction do
-      Cart.update(hash.keys,hash.values)
-      update_cart
+    params[:cart][:items].each do |index|
+      cart = Cart.find(params[:cart][:items][index][:id])
+      cart.update_attributes(quantity: params[:cart][:items][index][:quantity],total_money: cart.food.price * params[:cart][:items][index][:quantity].to_f)
     end
-  rescue ActiveRecord::RecordInvalid => exception
-      raise ActiveRecord::Rollback
+    respond_to do |format|
+      format.js
+    end
   end
 
   def destroy
@@ -47,13 +44,6 @@ class CartsController < ApplicationController
     respond_to do |format|
       format.html {redirect_to carts_url}
       format.js
-    end
-  end
-
-  private
-  def update_cart
-    Cart.all.each do |c|
-      c.update_attributes(total_money: c.quantity * c.food.price)
     end
   end
 end
