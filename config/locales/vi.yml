@@ -150,3 +150,7 @@ mật khẩu của bạn sẽ vẫn như nó được."
         total: "Tổng tiền"
     orders:
       created_at: "Đặt vào:"
+      danger: "Bạn không có quyền truy cập vào trang này !"
+      show:
+        customer_info: "Thông tin khách hàng"
+        order_details: "Thông tin đơn hàng"

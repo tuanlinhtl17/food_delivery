@@ -1,2 +1,35 @@
-<h1>Orders#show</h1>
-<p>Find me in app/views/orders/show.html.erb</p>
+<div class="container">
+  <h3 class="text-center"><%= t "views.orders.show.customer_info" %></h3>
+  <ul class="text-center">
+    <li><%= t("views.users.new.name") + ": #{@order.customer.name}" %></li>
+    <li><%= t("views.users.new.address") + ": #{@order.address}" %></li>
+    <li><%= t("views.users.new.phone_number") + ": #{@order.customer.phone_number}" %></li>
+    <li><%= t("views.static_pages.show_orders.total_money") + ": #{@order.total_money}" %></li>
+  </ul>
+
+  <h3 class="text-center"><%= t "views.orders.show.order_details" %></h3>
+  <div class="thumb-layout">
+    <div class="row" style="display:flex; flex-wrap:wrap;">
+      <% @order.order_details.each do |order_detail| %>
+        <div class="col-md-2 col-sm-4">
+          <div class="thumbnail">
+            <%= link_to order_detail.food do %>
+              <%= image_tag order_detail.food.img_url, alt: order_detail.food.name %>
+            <% end %>
+            <div class="caption">
+              <h4><%= link_to order_detail.food.name, order_detail.food, class: "text-center" %></h4>
+              <div class="row cart">
+                <div class="col-md-12"><span><%= t("views.static_pages.home.slider.price") + ": $#{order_detail.food.price}" %></span></div>
+              </div>
+              <br>
+              <span><%= link_to order_detail.food.user.name, order_detail.food.user %></span>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+  <iframe id="google-map" width="1200" height="450" frameborder="0" style="border:0"
+src="https://www.google.com/maps/embed/v1/directions?origin=Keangnam&destination=<%= @order.address %>&key=AIzaSyBCLWoI_LsgSGmhRBKrzozgImUWxmV6AxY" allowfullscreen></iframe>
+</div>

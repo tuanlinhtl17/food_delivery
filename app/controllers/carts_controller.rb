@@ -23,7 +23,7 @@ class CartsController < ApplicationController
     if !current_user.nil?
       @carts = current_user.carts.all
     else
-      @carts = Cart.all_cart
+      @carts = Cart.cart_amount_session request.session_options[:id]
     end
   end
 
