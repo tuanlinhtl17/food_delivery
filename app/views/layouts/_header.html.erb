@@ -13,21 +13,20 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
     <ul class="nav navbar-nav">
       <% if logged_in? && current_user.shipper? %>
-        <li><a href="#"><%= t "views.layouts.header.all" %></a></li>
-        <li><a href="#"><%= t "views.layouts.header.new_order" %></a></li>
-        <li><a href="#"><%= t "views.layouts.header.done" %></a></li>
-        <li><a href="#"><%= t "views.layouts.header.processing" %></a></li>
+        <li><a href="<%= orders_path(orders: "new")%>"><%= t "views.layouts.header.new_order" %></a></li>
+        <li><a href="<%= orders_path(orders: "done")%>"><%= t "views.layouts.header.done" %></a></li>
+        <li><a href="<%= orders_path(orders: "inprogress")%>"><%= t "views.layouts.header.processing" %></a></li>
       <% else %>
         <li><a href="#"><%= t "views.layouts.header.all" %></a></li>
         <li><a href="#"><%= t "views.layouts.header.lunch" %></a></li>
         <li><a href="#"><%= t "views.layouts.header.drink" %></a></li>
         <li><a href="#"><%= t "views.layouts.header.dessert" %></a></li>
-      <% end %>
-    </ul>
-    <ul class="nav navbar-nav navbar-right">
         <li>
           <a href= <%=carts_url %>><i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i><span class="badge"><%= cart_amount %></span></a>
         </li>
+      <% end %>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
       <% if !logged_in? %>
         <li><a href="#loginModal" data-toggle="modal" id="login-button"><i class="fa fa-sign-in fa-2x" aria-hidden="true"></i> <%= t("views.layouts.login") %></a></li>
         <li><a href="#signupModal" data-toggle="modal" ><i class="fa fa-user-plus fa-2x"></i> <%= t "views.layouts.signup"%></a></li>

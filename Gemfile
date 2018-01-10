@@ -30,6 +30,7 @@ gem "mysql2", ">= 0.3.18", "< 0.5"
 gem "i18n", "~> 0.7.0"
 
 gem "jquery-rails", "~> 4.3", ">= 4.3.1"
+gem 'jquery-ui-rails'
 
 gem "font-awesome-rails"
 

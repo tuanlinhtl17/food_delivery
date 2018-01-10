@@ -2,6 +2,7 @@ class Cart < ApplicationRecord
   belongs_to :user, optional: true
   belongs_to :food, optional: true
   validates :quantity, presence: true, numericality: { greater_than: 0,  only_integer: true }
+
   scope :cart_amount_user, -> user_id {
     where(user_id: user_id)
   }

@@ -53,6 +53,11 @@ your password will stay as it is."
         comfirmation: "Confirmation"
         address: "Address"
         phone_number: "Phone number"
+      show:
+        email: "Email"
+        phone_number: "Phone number"
+        address: "Address"
+        by_chef: "All food by this chef"
     sessions:
       new:
         username: "Username"
@@ -95,26 +100,34 @@ your password will stay as it is."
       search:
         nomatch: "Can't find foods match your keyword"
       home:
+        order_details:
+          success: "Receive orders successfully"
+          error: "An error occurred please try again later"
         slider:
           price: "Price"
           chef: "Chef"
           new_food: "New food"
           hot_food: "Hot food"
           hot_chef: "Hot chef"
-        show_orders:
-          all: "All Orders"
-          destination: "Destination:"
-          customer: "Customer:"
-          employee: "Employee:"
-          details: "Order Details:"
-          quantity: "Quantity:"
-          price_each: "Price Each:"
-          total_money: "Total Money:"
         cart:
           amount: "Amount"
           add_to_cart: "Add to cart"
           success: "Order success"
           error: "An error occurred please try again later"
+      show_orders:
+        all: "All Orders"
+        destination: "Destination"
+        customer: "Customer"
+        employee: "Employee"
+        details: "Order Details"
+        quantity: "Quantity"
+        price_each: "Price Each"
+        total_money: "Total Money"
+        new: "Status : New"
+        inprogress: "Status : In Progress"
+        done: "Status : Done"
+        delivery: "Delivery"
+        close: "Close"
     foods:
       show:
         header:
@@ -134,9 +147,3 @@ your password will stay as it is."
           pay: "Order"
           info: "Order information"
           total: "Total"
-    users:
-      show:
-        email: "Email"
-        phone_number: "Phone number"
-        address: "Address"
-        by_chef: "All food by this chef"

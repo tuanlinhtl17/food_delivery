@@ -1,0 +1,14 @@
+function pickOrder(id){
+  $.ajax({
+    url: '/deliveries',
+    type: 'POST',
+    data: {'order_id': id},
+    datatype: 'script',
+    success: function(){
+      alert('<%= I18n.t "views.static_pages.home.order_details.success" %>');
+    },
+    error: function(){
+      alert('<%= I18n.t "views.static_pages.home.order_details.error" %>');
+    }
+  });
+}
