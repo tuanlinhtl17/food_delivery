@@ -1,4 +1,6 @@
 vi:
+  date_format: "%d/%m/%Y"
+
   mailers:
     user_mailer:
       activate: "Xác nhận tài khoản"
@@ -78,6 +80,7 @@ mật khẩu của bạn sẽ vẫn như nó được."
         signup: "Đăng ký"
         logout: "Đăng xuất"
         profile: "Cá nhân"
+        orders: "Đơn hàng"
         header:
           all: "Tất cả"
           lunch: "Cơm trưa"
@@ -145,3 +148,5 @@ mật khẩu của bạn sẽ vẫn như nó được."
         pay: "Thanh toán"
         info: "Thông tin đơn hàng"
         total: "Tổng tiền"
+    orders:
+      created_at: "Đặt vào:"

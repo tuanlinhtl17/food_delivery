@@ -1,4 +1,6 @@
 en:
+  date_format: "%d/%m/%Y"
+
   mailers:
     user_mailer:
       activate: "Account activation"
@@ -78,6 +80,7 @@ your password will stay as it is."
         signup: "Sign up"
         logout: "Logout"
         profile: "Profile"
+        orders: "Orders"
         header:
           all: "All"
           lunch: "Lunch"
@@ -143,7 +146,9 @@ your password will stay as it is."
         call: "Call"
         share: "Share"
     carts:
-        index:
-          pay: "Order"
-          info: "Order information"
-          total: "Total"
+      index:
+        pay: "Order"
+        info: "Order information"
+        total: "Total"
+    orders:
+      created_at: "Created on:"

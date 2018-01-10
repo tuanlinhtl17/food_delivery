@@ -13,7 +13,7 @@ class OrdersController < ApplicationController
         @orders = Order.all
       end
     else
-      @orders = Order.all.paginate page: params[:page], per_page: 10
+      @orders = Order.ordered_by(current_user.id).includes(:order_details)
     end
   end
 

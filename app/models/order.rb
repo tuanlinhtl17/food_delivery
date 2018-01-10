@@ -29,4 +29,8 @@ class Order < ApplicationRecord
   def done?
     self.status == Settings.status.done
   end
+
+  scope :ordered_by, -> customer_id {
+    where(customer_id: customer_id).order("created_at DESC")
+  }
 end

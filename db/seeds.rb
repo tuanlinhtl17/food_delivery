@@ -27,10 +27,11 @@ User.create(name: "Employee",
 
 User.create(name: "Linh",
             email: "example@gmail.com",
-            user_type: 3,
+            user_type: 2,
             password: "12345678",
             password_confirmation: "12345678",
             username: "Linh17",
+            activated: true,
             avatar_url: "http://www.agentpipeline.com/wp-content/uploads/2015/10/Man-Avatar.png")
 
 User.create(name: "Chien",
@@ -39,6 +40,7 @@ User.create(name: "Chien",
             password: "12345678",
             password_confirmation: "12345678",
             username: "ChienChien",
+            activated: true,
             avatar_url: "http://www.agentpipeline.com/wp-content/uploads/2015/10/Man-Avatar.png")
 
 User.create(name: "LinhLinh",
@@ -47,6 +49,7 @@ User.create(name: "LinhLinh",
             password: "12345678",
             password_confirmation: "12345678",
             username: "Linh12",
+            activated: true,
             avatar_url: "http://www.agentpipeline.com/wp-content/uploads/2015/10/Man-Avatar.png")
 
 User.create(name: "Quang",
@@ -55,6 +58,16 @@ User.create(name: "Quang",
             password: "12345678",
             password_confirmation: "12345678",
             username: "Quang13",
+            activated: true,
+            avatar_url: "http://www.agentpipeline.com/wp-content/uploads/2015/10/Man-Avatar.png")
+
+User.create(name: "Nam",
+            email: "nam1@gmail.com",
+            user_type: 4,
+            password: "12345678",
+            password_confirmation: "12345678",
+            username: "Nam112",
+            activated: true,
             avatar_url: "http://www.agentpipeline.com/wp-content/uploads/2015/10/Man-Avatar.png")
 
 100.times do |n|
@@ -75,7 +88,7 @@ User.create(name: "Quang",
 end
 
 20.times do |n|
-  customer_id = 1
+  customer_id = 6
   employee_id = 2
   address = "Ha Noi"
   total_money = 20
@@ -87,17 +100,17 @@ end
                status: status)
 end
 
-20.times do |n|
+60.times do |n|
   quantity = 100
-  order_id = 2
+  order_id = n%20 + 1
   food_id = 1
   price = 2
   OrderDetail.create(quantity: quantity,
                      order_id: order_id,
                      food_id: food_id,
                      price: price)
-
 end
+
 Food.all.each do |f|
   User.limit(5).each do |u|
     f.comment_foods.create(content: Faker::Lorem.sentence(50),user_id: u.id)
