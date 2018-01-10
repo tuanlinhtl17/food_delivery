@@ -1,5 +1,5 @@
 <div class="thumb-layout">
-  <div class="row" style="display:flex; flex-wrap:wrap;">
+  <div class="row">
     <% @orders.each do |order| %>
       <div class="col-md-4 col-sm-4">
         <div class="thumbnail">
@@ -12,7 +12,11 @@
           <br>
           <span><%= t "views.static_pages.show_orders.inprogress" %></span>
           <br>
-          <a href="#" data-toggle="modal" data-target="#modal-<%= order.id %>"> <%= t("views.static_pages.show_orders.details") %></a>
+          <% if order.in_progress? %>
+            <%= link_to t("views.static_pages.show_orders.details"), order %>
+          <% else %>
+            <a href="#" data-toggle="modal" data-target="#modal-<%= order.id %>"> <%= t("views.static_pages.show_orders.details") %></a>
+          <% end %>
 
           <div id="modal-<%= order.id %>" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
             <div class="modal-dialog">

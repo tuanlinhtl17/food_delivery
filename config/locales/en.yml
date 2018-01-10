@@ -152,3 +152,7 @@ your password will stay as it is."
         total: "Total"
     orders:
       created_at: "Created on:"
+      danger: "You do not have permission to access this page !"
+      show:
+        customer_info: "Customer information"
+        order_details: "Order details"
