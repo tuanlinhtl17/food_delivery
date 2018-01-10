@@ -32,13 +32,18 @@
         <li><a href="#signupModal" data-toggle="modal" ><i class="fa fa-user-plus fa-2x"></i> <%= t "views.layouts.signup"%></a></li>
       <% else %>
         <li>
+          <%= link_to orders_path do %>
+            <i class="fa fa-list fa-2x" aria-hidden="true"></i> <%= t "views.layouts.orders" %>
+          <% end %>
+        </li>
+        <li>
           <%= link_to current_user do %>
-            <i class="fa fa-user fa-2x" aria-hidden="true"></i><%= t "views.layouts.profile" %>
+            <i class="fa fa-user fa-2x" aria-hidden="true"></i> <%= t "views.layouts.profile" %>
           <% end %>
         </li>
         <li>
           <%= link_to logout_path, remote: true, method: :delete do %>
-            <i class="fa fa-sign-out fa-2x" aria-hidden="true"></i><%= t "views.layouts.logout" %>
+            <i class="fa fa-sign-out fa-2x" aria-hidden="true"></i> <%= t "views.layouts.logout" %>
           <% end %>
         </li>
       <% end %>
