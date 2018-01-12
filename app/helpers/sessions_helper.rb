@@ -48,7 +48,7 @@ module SessionsHelper
 
   def cart_amount
     if logged_in?
-      cart_amount = Cart.cart_amount_user(current_user.id).size
+      cart_amount = current_user.carts.size
     else
       cart_amount = Cart.cart_amount_session(request.session_options[:id]).size
     end

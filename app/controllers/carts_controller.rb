@@ -20,10 +20,10 @@ class CartsController < ApplicationController
   end
 
   def index
-    if !current_user.nil?
-      @carts = current_user.carts.all
+    if current_user.present?
+      @carts = current_user.carts
     else
-      @carts = Cart.all_cart
+      @carts = Cart.cart_amount_session request.session_options[:id]
     end
   end
 
