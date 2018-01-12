@@ -10,8 +10,16 @@
           <br>
           <span><%= t "views.static_pages.show_orders.total_money" %>: $<%= order.total_money %></span>
           <br>
-          <span><%= t "views.static_pages.show_orders.inprogress" %></span>
-          <br>
+          <% if order.new? %>
+            <span><%= t "views.static_pages.show_orders.new" %></span>
+            <br>
+          <% elsif order.in_progress?  %>
+            <span><%= t "views.static_pages.show_orders.inprogress" %></span>
+            <br>
+          <% else %>
+            <span><%= t "views.static_pages.show_orders.done" %></span>
+            <br>
+          <% end %>
           <% if order.in_progress? %>
             <%= link_to t("views.static_pages.show_orders.details"), order %>
           <% else %>

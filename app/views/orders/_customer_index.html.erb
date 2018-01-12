@@ -1,7 +1,8 @@
 <% @orders.each do |order| %>
-  <hr>
-  <div class="thumb-layout">
+  <hr class="<%= order.id %>">
+  <div class="thumb-layout <%= order.id %>">
     <div class="row" style="display:flex; flex-wrap:wrap;">
+      <span><%= t "views.static_pages.show_orders.destination" %>: <%= order.address %></span>
       <% order.order_details.each do |order_detail| %>
         <div class="col-md-2 col-sm-4">
           <div class="thumbnail">
@@ -20,6 +21,11 @@
           </div>
         </div>
       <% end %>
+      <span id="delete-order">
+        <%= link_to  order, method: :delete, :remote => true  do%>
+          <i class="fa fa-times" aria-hidden="true"></i>
+        <% end %>
+      </span>
     </div>
   </div>
 <% end %>
