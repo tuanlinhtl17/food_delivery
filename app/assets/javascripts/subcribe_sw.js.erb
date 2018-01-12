@@ -1,0 +1,13 @@
+<% if current_user.shipper? %>
+  if (navigator.serviceWorker) {
+    navigator.serviceWorker.register('assets/serviceworker.js')
+      .then(function(registration) {
+        registration.pushManager.subscribe({ userVisibleOnly: true })
+          .then(function (subscription) {
+            $.post("/subscribe", { subscription: subscription.toJSON() });
+          });
+    }).catch(function(error) {
+      alert('Registration failed', ':^(', error);
+    });
+  }
+<% end %>

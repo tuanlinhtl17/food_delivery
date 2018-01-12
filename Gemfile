@@ -30,7 +30,8 @@ gem "mysql2", ">= 0.3.18", "< 0.5"
 gem "i18n", "~> 0.7.0"
 
 gem "jquery-rails", "~> 4.3", ">= 4.3.1"
-gem 'jquery-ui-rails'
+
+gem "jquery-ui-rails"
 
 gem "font-awesome-rails"
 
@@ -40,11 +41,15 @@ gem "bootstrap-will_paginate"
 
 gem "config"
 
-gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
+gem "faker", :git => "https://github.com/stympy/faker.git", :branch => "master"
 
-gem 'carrierwave',             '1.1.0'
+gem "carrierwave",             "1.1.0"
 
 gem "i18n-js"
+
+gem "serviceworker-rails"
+
+gem "webpush"
 
 group :development, :test do
 
