@@ -16,6 +16,8 @@
         <li><a href="<%= orders_path(orders: "new")%>"><%= t "views.layouts.header.new_order" %></a></li>
         <li><a href="<%= orders_path(orders: "done")%>"><%= t "views.layouts.header.done" %></a></li>
         <li><a href="<%= orders_path(orders: "inprogress")%>"><%= t "views.layouts.header.processing" %></a></li>
+      <% elsif logged_in? && current_user.admin?%>
+        <li><a href="#newFood" data-toggle="modal"><%= t "views.foods.new.new_food" %></a></li>
       <% else %>
         <li><a href="#"><%= t "views.layouts.header.all" %></a></li>
         <li><a href="#"><%= t "views.layouts.header.lunch" %></a></li>
@@ -60,3 +62,4 @@
 </nav>
 <%= render "layouts/form_login" %>
 <%= render "layouts/form_signup" %>
+<%= render "foods/new" %>

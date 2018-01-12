@@ -25,6 +25,10 @@ class User < ApplicationRecord
     where(user_type: Settings.user_type.chef).joins(:foods).group(:id).order("SUM(rating_avg) DESC").limit(4)
   }
 
+  scope :chef, -> {
+    where(user_type: Settings.user_type.chef)
+  }
+
   class << self
     def digest string
       cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST : BCrypt::Engine.cost

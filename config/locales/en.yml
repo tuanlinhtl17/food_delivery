@@ -135,6 +135,16 @@ your password will stay as it is."
         delivery: "Delivery"
         close: "Close"
     foods:
+      new:
+        new_food: "New Food"
+        name: "Food's name"
+        img_url: "Image URL"
+        price: "Price"
+        chef: "Chef"
+        category: "Food Category"
+        add: "Add"
+        success: "Created new food!"
+        danger: "You are not admin"
       show:
         header:
           category: "Category"
