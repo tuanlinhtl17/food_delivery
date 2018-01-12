@@ -45,6 +45,8 @@ gem "faker", :git => "https://github.com/stympy/faker.git", :branch => "master"
 
 gem "carrierwave",             "1.1.0"
 
+gem 'mini_magick',             '4.7.0'
+
 gem "i18n-js"
 
 gem "serviceworker-rails"

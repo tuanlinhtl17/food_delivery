@@ -1,2 +1,0 @@
-module CommentFoodsHelper
-end

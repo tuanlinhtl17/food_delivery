@@ -119,11 +119,11 @@ end
 
 Food.all.each do |f|
   User.limit(5).each do |u|
-    f.comment_foods.create(content: Faker::Lorem.sentence(50),user_id: u.id)
-    f.comment_foods.create(content: Faker::Lorem.sentence(50),user_id: u.id)
-    f.comment_foods.create(content: Faker::Lorem.sentence(50),user_id: u.id)
-    f.comment_foods.create(content: Faker::Lorem.sentence(50),user_id: u.id)
-    f.comment_foods.create(content: Faker::Lorem.sentence(50),user_id: u.id)
-    f.comment_foods.create(content: Faker::Lorem.sentence(50),user_id: u.id)
+    f.comments.create(content: Faker::Lorem.sentence(30),user_id: u.id)
+    f.comments.create(content: Faker::Lorem.sentence(30),user_id: u.id)
+    f.comments.create(content: Faker::Lorem.sentence(30),user_id: u.id)
+    f.comments.create(content: Faker::Lorem.sentence(30),user_id: u.id)
+    f.comments.create(content: Faker::Lorem.sentence(30),user_id: u.id)
+    f.comments.create(content: Faker::Lorem.sentence(30),user_id: u.id)
   end
 end

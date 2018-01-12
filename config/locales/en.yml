@@ -169,6 +169,7 @@ your password will stay as it is."
         picture: "Picture"
         call: "Call"
         share: "Share"
+        add: "Add"
     carts:
         index:
           pay: "Order"
@@ -200,4 +201,8 @@ your password will stay as it is."
         info_order: "Information line"
       check:
         confirm: "Are you sure ?"
-        error: "Something wrong ! Cannot find that order" 
+        error: "Something wrong ! Cannot find that order"
+    comments:
+        comment: "Comment"
+        close: "Close"
+        create: "Create comment"

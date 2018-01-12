@@ -169,6 +169,7 @@ mật khẩu của bạn sẽ vẫn như nó được."
         picture: "Ảnh"
         call: "Gọi"
         share: "Chia sẻ"
+        add: "Thêm"
     carts:
       index:
         pay: "Thanh toán"
@@ -200,4 +201,8 @@ mật khẩu của bạn sẽ vẫn như nó được."
         info_order: "Thông tin đơn hàng"
       checked:
         confirm: "Bạn chắc chứ ?"
-        error: "Có lỗi xảy ra ! Không tìm thấy đơn đặt hàng " 
+        error: "Có lỗi xảy ra ! Không tìm thấy đơn đặt hàng "
+    comments:
+        comment: "Bình luận"
+        close: "Đóng"
+        create: "Tạo bình luận"

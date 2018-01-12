@@ -1,2 +1,0 @@
-class CommentFoodsController < ApplicationController
-end

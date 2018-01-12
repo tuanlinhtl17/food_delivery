@@ -19,4 +19,5 @@ Rails.application.routes.draw do
   patch "carts", to: "carts#update"
   resources :carts, only: [:destroy, :index]
   resources :votes, only: [:create, :update]
+  resources :comments, only: [:create]
 end
