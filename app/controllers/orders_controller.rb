@@ -15,7 +15,7 @@ class OrdersController < ApplicationController
         end
       else
         @orders = Order.ordered_by(current_user.id).includes(:order_details)
-      end      
+      end
     else
       flash[:danger] = t "views.orders.danger"
       redirect_to root_path
@@ -29,5 +29,17 @@ class OrdersController < ApplicationController
 
   def new
     @order = Order.new
+  end
+
+  def destroy
+    order = Order.find params[:id]
+    order.destroy
+    @order_id = params[:id]
+    if order.destroy
+      respond_to do |format|
+        format.html {redirect_to orders_url}
+        format.js
+      end
+    end
   end
 end
