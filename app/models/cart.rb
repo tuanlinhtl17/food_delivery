@@ -7,12 +7,13 @@ class Cart < ApplicationRecord
     where(session_id: session_id)
   }
 
-  def Cart.total
-    carts = Cart.all
-    carts.each do |c|
-      total = total +  c.quantity * c.price
-    end
-    return total
+  scope :cart_order, -> customer_id{
+    select("quantity, food_id, total_money").where(id: customer_id)
+  }
+
+  def Cart.total id
+    carts = Cart.where(user_id: id)
+    carts.map{|c| c.food.price * c.quantity }.reduce(:+)
   end
 end
 

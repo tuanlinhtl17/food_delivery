@@ -1,7 +1,7 @@
 <li class="coment-food">
   <div id="comment-food">
     <div>
-      <%= gravatar_for comment_food.user, 30 %>&nbsp;<%= link_to comment_food.user.name, comment_food.user %>
+      <img src ="<%= comment_food.user.avatar_url%>" height="20" width="20">&nbsp;<%= link_to comment_food.user.name, comment_food.user %>
     </div>
     <hr>
     <div>

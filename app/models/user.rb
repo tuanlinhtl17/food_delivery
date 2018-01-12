@@ -100,7 +100,7 @@ class User < ApplicationRecord
 
   def downcase_email
     return unless email
-    self.email = email.downcase!
+    self.email = email.downcase
   end
 
   def create_activation_digest

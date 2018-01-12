@@ -1,6 +1,5 @@
 vi:
   date_format: "%d/%m/%Y"
-
   mailers:
     user_mailer:
       activate: "Xác nhận tài khoản"
@@ -30,6 +29,10 @@ vi:
         success: "Mật khẩu đã được đặt lại."
       check_expiration:
         danger: "Đặt lại mật khẩu đã hết hạn."
+    orders:
+      create:
+        success: "Đặt hàng thành công"
+        lost_info: "Thiếu thông tin đặt hàng"
 
   views:
     user_mailer:
@@ -148,9 +151,27 @@ mật khẩu của bạn sẽ vẫn như nó được."
         pay: "Thanh toán"
         info: "Thông tin đơn hàng"
         total: "Tổng tiền"
+    users:
+      show:
+        email: "Email"
+        phone_number: "Số điện thoại"
+        address: "Địa chỉ"
+        by_chef: "Các món ăn của đầu bếp này"
     orders:
       created_at: "Đặt vào:"
       danger: "Bạn không có quyền truy cập vào trang này !"
       show:
         customer_info: "Thông tin khách hàng"
         order_details: "Thông tin đơn hàng"
+      new:
+        dish: "Món"
+        phone: "Số điện thoại"
+        price: "Giá"
+        quantity: "Số lượng"
+        order: "Đặt hàng"
+        total: "Tổng tiền"
+        example: "Ví dụ : 171 Phạm Hùng, Cầu Giấy, Hà Nội"
+        address: "Địa chỉ"
+        shipping_address: "Địa chỉ nhận hàng"
+        select_address: "Chọn địa chỉ giao hàng"
+        info_order: "Thông tin đơn hàng"

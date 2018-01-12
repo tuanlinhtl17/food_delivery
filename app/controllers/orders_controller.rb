@@ -29,6 +29,37 @@ class OrdersController < ApplicationController
 
   def new
     @order = Order.new
+    @orders = current_user.carts
+  end
+
+  def create
+    carts = Cart.cart_order current_user.id
+    order_details = to_hash carts
+    if params[:order][:address] != ""
+      address = params[:order][:address]
+    else
+      address = current_user.address
+    end
+    order = Order.new(
+        customer_id: current_user.id,
+        status: Settings.status.new_order,
+        address: address,
+        total_money: Cart.total(current_user.id),
+        order_details_attributes: order_details
+    )
+    if order.save
+      current_user.carts.delete_all
+      redirect_to root_url
+      flash[:success] = t "controllers.orders.create.success"
+    else
+      redirect_to request.referrer || root_url
+      flash[:info] = t "controllers.orders.create.lost_info"
+    end
+  end
+
+  private
+  def to_hash relation
+    relation.map(&:attributes)
   end
 
   def destroy

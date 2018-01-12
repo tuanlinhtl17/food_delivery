@@ -108,7 +108,7 @@ end
   OrderDetail.create(quantity: quantity,
                      order_id: order_id,
                      food_id: food_id,
-                     price: price)
+                     total_money: price)
 end
 
 Food.all.each do |f|

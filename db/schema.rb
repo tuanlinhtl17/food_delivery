@@ -58,7 +58,7 @@ ActiveRecord::Schema.define(version: 20171227123539) do
     t.integer "quantity"
     t.bigint "order_id"
     t.bigint "food_id"
-    t.float "price", limit: 24
+    t.float "total_money", limit: 24
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["food_id"], name: "index_order_details_on_food_id"
@@ -98,7 +98,7 @@ ActiveRecord::Schema.define(version: 20171227123539) do
   end
 
   add_foreign_key "carts", "foods"
-  add_foreign_key "carts", "users", column: "user_id"
+  add_foreign_key "carts", "users"
   add_foreign_key "comment_foods", "foods"
   add_foreign_key "comment_foods", "users"
   add_foreign_key "foods", "food_categories"

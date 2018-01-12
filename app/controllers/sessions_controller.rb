@@ -13,7 +13,7 @@ class SessionsController < ApplicationController
           log_in user
           params[:session][:remember_me] == "1" ? remember(user) : forget(user)
           flash[:success] = t "controllers.sessions.create.success"
-          redirect_to user_url(user.id)
+          redirect_to request.referrer || root_url
         else
           message  = t "controllers.sessions.create.message1"
           message += t "controllers.sessions.create.message2"
@@ -31,7 +31,7 @@ class SessionsController < ApplicationController
         user = User.auth_facebook user_id, name
         log_in user
         flash[:success] = t "controllers.sessions.create.success"
-        redirect_to root_url
+        redirect_to request.referrer || root_url
       rescue
         flash.now[:danger] = t "controllers.sessions.create.danger"
       end

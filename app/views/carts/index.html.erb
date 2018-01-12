@@ -14,7 +14,15 @@
     <hr>
     <h3><%= t "views.carts.index.total"  %> :  </h3>
     <h3 id="total"></h3>
-    <button class="btn btn-success"><%= t "views.carts.index.pay" %></button>
+        <% if logged_in? %>
+           <% if current_user.carts.any? %>
+            <button id="update-cart", class="btn btn-success"><%= t("views.carts.index.pay") %></button>
+           <% else %>
+           <% end %>
+        <% else %>
+           <a href="#loginModal" data-toggle="modal" id="login-button" class="btn btn-success"><%= t("views.carts.index.pay") %></a>
+        <% end %>
   </div>
 </div>
 <%= javascript_include_tag "cart", "data-turbolinks-track": "reload" %>
+<%= render "layouts/form_login" %>
