@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
   post "/create_cart", to: "carts#create"
+  post "/subscribe" => "subscriptions#create"
+  post "/push" => "push_notifications#create"
   resources :deliveries
   resources :foods
   resources :order_details

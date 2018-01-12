@@ -20,3 +20,15 @@
 //= require bootstrap
 //= require turbolinks
 //= require_tree .
+
+if (navigator.serviceWorker) {
+  navigator.serviceWorker.register('/serviceworker.js')
+    .then(function(registration) {
+      registration.pushManager.subscribe({ userVisibleOnly: true })
+        .then(function (subscription) {
+          $.post("/subscribe", { subscription: subscription.toJSON() });
+        });
+  }).catch(function(error) {
+    alert('Registration failed', ':^(', error);
+  });
+}
