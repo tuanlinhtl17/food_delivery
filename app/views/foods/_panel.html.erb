@@ -29,7 +29,7 @@
           <ul class="list-inline" >
             <li class="list-inline-item"><a><i class="fa fa-comment"></i>&nbsp;<%= t "views.foods.show.comment" %></a></li>
             <li class="list-inline-item"><a><i class="fa fa-camera"></i>&nbsp;<%= t "views.foods.show.picture" %></a></li>
-            <li class="list-inline-item"><a><i class="fa fa-share-alt"></i>&nbsp;<%= t "views.foods.show.share" %></a></li>
+            <li class="list-inline-item"><a href="https://www.facebook.com/dialog/share?app_id=510412632666893&display=popup&href=<%= food_url(@food) %>&redirect_uri=<%= food_url(@food) %>"><i class="fa fa-share-alt"></i>&nbsp;<%= t "views.foods.show.share" %></a></li>
             <li class="list-inline-item"><a><i class="fa fa-phone"></i>&nbsp;<%= t "views.foods.show.call" %></a></li>
           </ul>
         </div>
