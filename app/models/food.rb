@@ -1,9 +1,9 @@
 class Food < ApplicationRecord
   validates :name, presence: true
   validates :price, presence: true
-  has_many :comment_foods
-  has_many :order_details
-  has_many :carts
+  has_many :comment_foods, dependent: :destroy
+  has_many :order_details, dependent: :destroy
+  has_many :carts, dependent: :destroy
   belongs_to :food_category
   belongs_to :user
   has_many :votes

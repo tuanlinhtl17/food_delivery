@@ -85,6 +85,7 @@ mật khẩu của bạn sẽ vẫn như nó được."
       profile: "Cá nhân"
       orders: "Đơn hàng"
       header:
+        list: "Danh sách thực phẩm"
         all: "Tất cả"
         lunch: "Cơm trưa"
         drink: "Đồ uống"
@@ -133,7 +134,18 @@ mật khẩu của bạn sẽ vẫn như nó được."
         new: "Trạng thái: Mới "
         inprogress: "Trạng thái: Đang giao"
         done: "Trạng thái: Đã giao"
+        delivery: "Delivery"
+        close: "Đóng"
     foods:
+      delete:
+        button: "Xóa thức ăn này"
+        confirm: "Bạn có chắc không?"
+      update:
+        button: "Chỉnh sửa thức ăn này"
+        success: "Thực phẩm đã được cập nhật!"
+        danger: "Bạn không phải là quản trị viên"
+        title: "Chỉnh sửa món ăn"
+        update_food: "Cập nhật thức ăn"
       new:
         new_food: "Thêm mới thực phẩm"
         name: "Tên thực phẩm"

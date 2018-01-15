@@ -7,7 +7,17 @@ class FoodsController < ApplicationController
   end
 
   def index
-    @foods = Food.search params[:search]
+    @foods = Food.all
+  end
+
+  def destroy
+    if current_user.admin?
+      @food = Food.find(params[:id])
+      @food.destroy
+      respond_to do |format|
+        format.js
+      end
+    end
   end
 
   def create
@@ -21,6 +31,21 @@ class FoodsController < ApplicationController
       end
     else
       flash[:danger] = t("views.foods.new.danger")
+      redirect_to root_url
+    end
+  end
+
+  def update
+    if current_user.admin?
+      @food = Food.find_by params[:id]
+      if @food.update_attributes(food_params)
+        flash[:success] = t("views.foods.update.success")
+        redirect_to @food
+      else
+        render "edit"
+      end
+    else
+      flash[:danger] = t("views.foods.update.danger")
       redirect_to root_url
     end
   end
