@@ -1,6 +1,6 @@
 class PushNotificationsController < ApplicationController
   def create
-    Webpush.payload_send webpush_params
+    Webpush.payload_send webpush_params if current_user.shipper?
 
     head :ok
   end
@@ -8,21 +8,14 @@ class PushNotificationsController < ApplicationController
   private
 
   def webpush_params
-    subscription_params = fetch_subscription
+    subscription_params = session[:subscription]
+    # byebug
     message = "Hello world, the time is #{Time.zone.now}"
-    endpoint = subscription_params[:endpoint],
-    p256dh = subscription_params.dig(:keys, :p256dh)
-    auth = subscription_params.dig(:keys, :auth)
-    api_key = ENV.fetch('GOOGLE_CLOUD_MESSAGE_API_KEY') || ""
+    endpoint = subscription_params["endpoint"]
+    p256dh = subscription_params.dig("keys", "p256dh")
+    auth = subscription_params.dig("keys", "auth")
+    api_key = "AIzaSyBrtH4xv8gqlhiUlc4dD3zl9jUbKrc5VGg" || ""
 
     { message: message, endpoint: endpoint, p256dh: p256dh, auth: auth, api_key: api_key }
-  end
-
-  def fetch_subscription
-    encoded_subscription = session.fetch(:subscription) do
-      raise "Cannot create notification: no :subscription in params or session"
-    end
-
-    JSON.parse(Base64.urlsafe_decode64(encoded_subscription)).with_indifferent_access
   end
 end
