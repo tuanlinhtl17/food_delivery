@@ -133,6 +133,16 @@ mật khẩu của bạn sẽ vẫn như nó được."
         inprogress: "Trạng thái: Đang giao"
         done: "Trạng thái: Đã giao"
     foods:
+      new:
+        new_food: "Thêm mới thực phẩm"
+        name: "Tên thực phẩm"
+        img_url: "URL hình ảnh"
+        price: "Giá bán"
+        chef: "Đầu bếp"
+        category: "Loại thực phẩm"
+        add: "Thêm"
+        success: "Đã tạo thức ăn mới!"
+        danger: "Bạn không phải là quản trị viên"
       show:
         header:
           category: "Loại món"

@@ -70,6 +70,15 @@ User.create(name: "Nam",
             activated: true,
             avatar_url: "http://www.agentpipeline.com/wp-content/uploads/2015/10/Man-Avatar.png")
 
+User.create(name: "Boss",
+            email: "boss@gmail.com",
+            user_type: 1,
+            password: "12345678",
+            password_confirmation: "12345678",
+            username: "admin_restaurant",
+            activated: true,
+            avatar_url: "http://www.agentpipeline.com/wp-content/uploads/2015/10/Man-Avatar.png")
+
 100.times do |n|
   name = "Nem"
   img_url = "https://eva-img.24hstatic.com/upload/2-2017/images/2017-06-08/10-mon-ngon-tu-thit-bam-an-cung-com-trang-het-veo-3-noi-1-1496896543-width600height450.jpg"
