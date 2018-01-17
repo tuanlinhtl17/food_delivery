@@ -2,8 +2,7 @@ Food.create name: "Nem",
             img_url: "123124asdasd",
             price: "12",
             food_category_id: "1",
-            rating_avg: "100",
-            rate_count: "1"
+            rating_avg: "100"
 
 FoodCategory.create name: "Ran"
 
@@ -86,14 +85,12 @@ User.create(name: "Boss",
   food_category_id = 1
   user_id = (n%5 + 1)
   rating_avg = 4.0
-  rate_count = 50
   Food.create(name: name,
                img_url: img_url,
                price: price,
                food_category_id: food_category_id,
                user_id: user_id,
-               rating_avg: rating_avg,
-               rate_count: rate_count)
+               rating_avg: rating_avg)
 end
 
 20.times do |n|
