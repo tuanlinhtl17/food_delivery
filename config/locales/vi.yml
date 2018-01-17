@@ -186,3 +186,6 @@ mật khẩu của bạn sẽ vẫn như nó được."
         shipping_address: "Địa chỉ nhận hàng"
         select_address: "Chọn địa chỉ giao hàng"
         info_order: "Thông tin đơn hàng"
+      checked:
+        confirm: "Bạn chắc chứ ?"
+        error: "Có lỗi xảy ra ! Không tìm thấy đơn đặt hàng " 

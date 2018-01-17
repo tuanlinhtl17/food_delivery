@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   post "/create_cart", to: "carts#create"
   post "/subscribe" => "subscriptions#create"
   post "/push" => "push_notifications#create"
-  resources :deliveries
+  post "/deliveries" => "deliveries#create"
   resources :foods
   resources :order_details
   resources :users

@@ -31,6 +31,6 @@ class Order < ApplicationRecord
   end
 
   scope :ordered_by, -> customer_id {
-    where(customer_id: customer_id).order("created_at DESC")
+    where("customer_id = ? AND status != ?", customer_id, Settings.status.done).order("created_at DESC")
   }
 end
