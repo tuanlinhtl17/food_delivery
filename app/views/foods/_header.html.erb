@@ -8,7 +8,7 @@
         <h1><%= food.name %></h1>
         <p><%= "#{t "views.foods.show.header.category"}: " %><%= link_to category.name, category %></p>
         <%= render "foods/star_rating" %>
-        <p><%= "#{food.rating_avg} / #{food.rate_count} " %><%= t "views.foods.show.header.rate" %></p>
+        <span id="vote-avg"><%= "#{food.rating_avg} / #{food.votes.count} " %></span><span> <%= t "views.foods.show.header.rate" %></span>
         <p><%= t "views.foods.show.header.price" %>: $<%= food.price %></p>
         <p><%= t "views.foods.show.header.chef" %>: <%= link_to food.user.name, food.user %></p>
         <hr>

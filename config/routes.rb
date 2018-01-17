@@ -18,4 +18,5 @@ Rails.application.routes.draw do
   match "search(/:search)", :to => "static_pages#search", :as => :search, via: [:get, :post]
   patch "carts", to: "carts#update"
   resources :carts, only: [:destroy, :index]
+  resources :votes, only: [:create, :update]
 end

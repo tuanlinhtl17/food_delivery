@@ -7,7 +7,6 @@ class CreateFoods < ActiveRecord::Migration[5.1]
       t.references :food_category, foreign_key: true
       t.references :user, foreign_key: true
       t.float :rating_avg
-      t.integer :rate_count
 
       t.timestamps
     end

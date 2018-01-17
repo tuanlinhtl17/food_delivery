@@ -47,7 +47,6 @@ ActiveRecord::Schema.define(version: 20180117035351) do
     t.bigint "food_category_id"
     t.bigint "user_id"
     t.float "rating_avg", limit: 24
-    t.integer "rate_count"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["food_category_id"], name: "index_foods_on_food_category_id"
@@ -105,6 +104,16 @@ ActiveRecord::Schema.define(version: 20180117035351) do
     t.datetime "activated_at"
     t.string "reset_digest"
     t.datetime "reset_sent_at"
+  end
+
+  create_table "votes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.bigint "user_id"
+    t.bigint "food_id"
+    t.float "rating", limit: 24
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["food_id"], name: "index_votes_on_food_id"
+    t.index ["user_id"], name: "index_votes_on_user_id"
   end
 
   add_foreign_key "carts", "foods"

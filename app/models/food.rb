@@ -6,6 +6,7 @@ class Food < ApplicationRecord
   has_many :carts
   belongs_to :food_category
   belongs_to :user
+  has_many :votes
 
   scope :search, -> content {
     where "name LIKE ?", "%#{content}%"
