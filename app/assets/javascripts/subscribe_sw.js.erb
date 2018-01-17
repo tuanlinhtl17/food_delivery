@@ -1,0 +1,19 @@
+if (navigator.serviceWorker) {
+  navigator.serviceWorker.register('/assets/serviceworker.js')
+    .then(function (registration) {
+      registration.pushManager.subscribe({ userVisibleOnly: true })
+        .then(function (subscription) {
+          subscription = subscription.toJSON();
+          var endpoint = subscription.endpoint;
+          var p256dh = subscription.keys.p256dh;
+          var auth = subscription.keys.auth;
+          $.post("/subscribe", { subscription: {
+            endpoint: endpoint,
+            p256dh: p256dh,
+            auth: auth
+          }});
+        });
+    }).catch(function (error) {
+      alert(<%= I18n.t "views.layouts.sw_registration" %>);
+    });
+}

@@ -13,7 +13,7 @@
           <i class="fa fa-map-marker"></i> <span><b><%= t "views.orders.new.shipping_address" %></b></span>
           <%= form_for @order do |f| %>
             <%= f.text_area :address, size: "68x4", id:"order-customer", placeholder: t("views.orders.new.example") %><br>
-            <%= f.submit t("views.orders.new.order"), class:"btn btn-success" %>
+            <%= f.submit t("views.orders.new.order"), class:"btn btn-success js-push-button" %>
           <% end %>
         </div>
 

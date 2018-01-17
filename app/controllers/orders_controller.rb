@@ -57,11 +57,6 @@ class OrdersController < ApplicationController
     end
   end
 
-  private
-  def to_hash relation
-    relation.map(&:attributes)
-  end
-
   def destroy
     order = Order.find params[:id]
     order.destroy
@@ -72,5 +67,10 @@ class OrdersController < ApplicationController
         format.js
       end
     end
+  end
+
+  private
+  def to_hash relation
+    relation.map(&:attributes)
   end
 end
