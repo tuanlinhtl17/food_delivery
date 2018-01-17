@@ -22,10 +22,31 @@
         </div>
       <% end %>
       <span id="delete-order">
-        <%= link_to  order, method: :delete, :remote => true  do%>
+        <%= link_to order, method: :delete, remote: true do %>
           <i class="fa fa-times" aria-hidden="true"></i>
         <% end %>
+      </span>
+
+      <span id="update-order">
+        <button data-id="<%= order.id %>" type="button" class="btn btn-primary" name="order_id">
+          <i class="fa fa-check" aria-hidden="true"></i>
+        </button>     
       </span>
     </div>
   </div>
 <% end %>
+
+<script>
+  $(document).ready(function () {
+    $('#update-order button').click(function () {
+      if (confirm('<%= I18n.t "views.orders.checked.confirm" %>')) {
+        $.ajax({
+          url: '/orders/' + $(this).attr("data-id"),
+          type: 'PATCH',
+          data: {'order_id': $(this).attr("data-id")},
+          datatype: 'script'
+        });
+      }
+    });
+  });
+</script>

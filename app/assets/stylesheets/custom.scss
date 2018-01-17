@@ -335,9 +335,15 @@ a #signup-modal:hover {
   border: .5px solid #DDE2E4;
   border-top: none;
   padding: 30px;
-
 }
 
 #google-map {
   border: 0
+}
+
+#update-order button {
+  padding: 0;
+  border: none;
+  background: none;
+  color: #1F7AC9;
 }

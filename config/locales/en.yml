@@ -174,7 +174,6 @@ your password will stay as it is."
           pay: "Order"
           info: "Order information"
           total: "Total"
-
     users:
       show:
         email: "Email"
@@ -199,3 +198,6 @@ your password will stay as it is."
         shipping_address: "Shipping address"
         select_address: "Select the place of receipt"
         info_order: "Information line"
+      check:
+        confirm: "Are you sure ?"
+        error: "Something wrong ! Cannot find that order" 

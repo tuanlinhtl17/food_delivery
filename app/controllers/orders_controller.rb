@@ -69,6 +69,19 @@ class OrdersController < ApplicationController
     end
   end
 
+  def update
+    @order = Order.find params[:order_id]
+    if @order
+      @order.update_attributes status: Settings.status.done
+      respond_to do |format|
+        format.js
+      end
+    else
+      flash[:danger] = t "views.orders.check.error"
+      redirect_to orders_url
+    end
+  end
+
   private
   def to_hash relation
     relation.map(&:attributes)
