@@ -85,6 +85,7 @@ your password will stay as it is."
       profile: "Profile"
       orders: "Orders"
       header:
+        list: "List Food"
         all: "All"
         lunch: "Lunch"
         drink: "Drink"
@@ -136,6 +137,15 @@ your password will stay as it is."
         delivery: "Delivery"
         close: "Close"
     foods:
+      delete:
+        button: "Delete this food"
+        confirm: "You sure?"
+      update:
+        button: "Edit this food"
+        success: "Food has updated!"
+        danger: "You are not admin"
+        title: "Edit Food"
+        update_food: "Update Food"
       new:
         new_food: "New Food"
         name: "Food's name"
