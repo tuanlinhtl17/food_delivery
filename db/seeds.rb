@@ -97,7 +97,7 @@ User.create(name: "Boss",
 end
 
 20.times do |n|
-  customer_id = 6
+  customer_id = 7
   employee_id = 2
   address = "Ha Noi"
   total_money = 20

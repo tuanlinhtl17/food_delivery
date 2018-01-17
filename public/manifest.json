@@ -1,0 +1,14 @@
+{
+  "name": "FoodDelivery",
+  "icons": [
+    {
+      "src": "images/food-delivery-logo_1447-29.jpg",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/",
+  "display": "standalone",
+  "gcm_sender_id": "920333659575",
+  "gcm_user_visible_only": true
+}

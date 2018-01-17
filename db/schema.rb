@@ -10,11 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171227123539) do
+ActiveRecord::Schema.define(version: 20180117035351) do
 
   create_table "carts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.bigint "user_id"
-    t.integer "total_money"
+    t.float "total_money", limit: 24
     t.bigint "food_id"
     t.integer "quantity"
     t.datetime "created_at", null: false
@@ -78,6 +78,16 @@ ActiveRecord::Schema.define(version: 20171227123539) do
     t.index ["employee_id"], name: "index_orders_on_employee_id"
   end
 
+  create_table "subscriptions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.bigint "user_id"
+    t.string "endpoint"
+    t.string "p256dh"
+    t.string "auth"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_subscriptions_on_user_id"
+  end
+
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
     t.string "email"
@@ -105,4 +115,5 @@ ActiveRecord::Schema.define(version: 20171227123539) do
   add_foreign_key "foods", "users"
   add_foreign_key "order_details", "foods"
   add_foreign_key "order_details", "orders"
+  add_foreign_key "subscriptions", "users"
 end

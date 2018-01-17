@@ -7,8 +7,8 @@ class Cart < ApplicationRecord
     where(session_id: session_id)
   }
 
-  scope :cart_order, -> customer_id{
-    select("quantity, food_id, total_money").where(id: customer_id)
+  scope :cart_order, -> customer_id {
+    select("quantity, food_id, total_money").where(user_id: customer_id)
   }
 
   def Cart.total id
