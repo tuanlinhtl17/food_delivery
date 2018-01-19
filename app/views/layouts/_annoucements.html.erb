@@ -1,0 +1,16 @@
+<div class="slider" id="annoucements">
+  <div class="container">
+    <div class="col-xs-12">
+      <div class="carousel slide vertical" id="myAnnoucements">
+        <div class="carousel-inner">
+          <% newest_annoucement[0].pictures.each do |pic| %>
+            <div class="item active">
+              <%= image_tag pic.image_url :thumb %>
+            </div>
+          <% end %>
+        </div>
+          <!-- /.control-box -->
+      </div><!-- /#myCarousel -->
+    </div><!-- /.col-xs-12 -->
+  </div><!-- /.container -->
+</div>

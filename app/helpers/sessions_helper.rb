@@ -53,4 +53,8 @@ module SessionsHelper
       cart_amount = Cart.cart_amount_session(request.session_options[:id]).size
     end
   end
+
+  def newest_annoucement
+    Annoucement.newest_annoucement
+  end
 end

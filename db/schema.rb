@@ -10,7 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180117035351) do
+ActiveRecord::Schema.define(version: 20180119125425) do
+
+  create_table "annoucements", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "carts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.bigint "user_id"
@@ -80,8 +86,10 @@ ActiveRecord::Schema.define(version: 20180117035351) do
   create_table "pictures", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "image"
     t.bigint "comment_id"
+    t.bigint "annoucement_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["annoucement_id"], name: "index_pictures_on_annoucement_id"
     t.index ["comment_id"], name: "index_pictures_on_comment_id"
   end
 

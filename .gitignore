@@ -26,3 +26,5 @@
 /test/*
 .idea/*
 /config/environments/development.rb
+
+/public/uploads/picture/image/*
