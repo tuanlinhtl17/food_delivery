@@ -117,6 +117,21 @@ end
                      total_money: price)
 end
 
+20.times do |n|
+  customer_id = 7
+  employee_id = 2
+  address = Faker::Address.street_address
+  food = Food.find(n + 1)
+  total_money = food.price
+  status = 3
+  order = Order.create(customer_id: customer_id,
+               employee_id: employee_id,
+               address: address,
+               total_money: total_money,
+               status: status)
+  order.order_details.create(food_id: food.id, quantity: 1, total_money: total_money )
+end
+
 Food.all.each do |f|
   User.limit(5).each do |u|
     f.comments.create(content: Faker::Lorem.sentence(30),user_id: u.id)

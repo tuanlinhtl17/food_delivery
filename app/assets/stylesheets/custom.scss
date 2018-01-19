@@ -476,3 +476,17 @@ img.hover-shadow {
 #comment-content{
   margin-bottom: 2em;
 }
+
+.paginate_button:hover{
+  cursor: pointer;
+}
+#delivery_month_wrapper{
+  .paginate_button{
+    backgound: blue;
+    padding: 2px
+  }
+
+  .current{
+    color: black;
+  }
+}

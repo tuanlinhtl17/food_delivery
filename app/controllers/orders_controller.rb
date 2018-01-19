@@ -13,9 +13,16 @@ class OrdersController < ApplicationController
         else
           @orders = Order.all
         end
+      elsif current_user.admin?
+        @orders = Order.deliveried_in_month
+        respond_to do |format|
+          format.html
+          format.xls
+        end
       else
         @orders = Order.ordered_by(current_user.id).includes(:order_details)
       end
+
     else
       flash[:danger] = t "views.orders.danger"
       redirect_to root_path
