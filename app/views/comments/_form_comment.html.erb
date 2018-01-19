@@ -1,0 +1,24 @@
+<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" id="commentModal" style="width: 100%">
+  <div class="modal-dialog modal-lg" role="document" style="width: 100%">
+    <div class="modal-content" style="max-width: 600px">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title"><%= t "views.comments.comment" %></h4>
+      </div>
+      <div class="modal-body">
+        <%= form_for @comment do |f| %>
+          <%= f.text_area :content,class: "form-control", style: "height: 250px"%>
+          <%= f.hidden_field :food_id,:value => @food.id.to_s %>
+          <%= f.fields_for :pictures do |picture| %>
+            <%= render "picture_fields", f: picture %>
+          <% end %>
+            <%= link_to_add_fields(t("views.foods.show.add"), f, :pictures) %>
+      </div>
+      <div class="modal-footer">
+        <%= f.submit t("views.comments.create"), class:"btn btn-success", id:"submit-comment" %>
+        <% end %>
+        <button type="button" class="btn btn-default" data-dismiss="modal"><%= t "views.comments.close" %></button>
+      </div>
+    </div>
+  </div>
+</div>

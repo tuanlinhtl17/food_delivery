@@ -8,12 +8,12 @@
         <h1><%= food.name %></h1>
         <p><%= "#{t "views.foods.show.header.category"}: " %><%= link_to category.name, category %></p>
         <%= render "foods/star_rating" %>
-        <span id="vote-avg"><%= "#{food.rating_avg} / #{food.votes.count} " %></span><span> <%= t "views.foods.show.header.rate" %></span>
-        <p><%= t "views.foods.show.header.price" %>: $<%= food.price %></p>
+        <span id="vote-avg"><%= "#{food.rating_avg} / #{food.votes.count} " %></span><span> <%= t "views.foods.show.header.rate" %></span><br><br>
+        <span><%= t "views.foods.show.header.price" %>: $<%= food.price %></span>
         <p><%= t "views.foods.show.header.chef" %>: <%= link_to food.user.name, food.user %></p>
         <hr>
         <h5><%= t "views.foods.show.header.delivery_fee" %>: <%= Settings.delivery_fee %></h5>
-        <% if current_user.admin? %>
+        <% if logged_in? && current_user.admin? %>
           <a href="#editFood" data-toggle="modal" class="btn btn-warning"><%= t "views.foods.update.button" %></a>
           <%= link_to t("views.foods.delete.button"), @food, method: :delete, remote: :true,
                                            data: { confirm: t("views.foods.delete.confirm") } %>

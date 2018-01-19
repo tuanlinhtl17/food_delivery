@@ -4,7 +4,7 @@ class User < ApplicationRecord
   attr_accessor :remember_token, :activation_token, :reset_token
   before_save   :downcase_email
   before_create :create_activation_digest
-  has_many :comment_foods
+  has_many :comments
   has_many :orders
   has_many :foods
   has_many :customer, through: :active_relationships, source: :customer

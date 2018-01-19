@@ -19,27 +19,26 @@ function currentSlide(n) {
 
 function showSlides(n) {
     var i;
-    var slides = $('.mySlides');
-    var dots = $('.demo');
-    var captionText = $('#caption');
-    if (n > slides.length) {slideIndex = 1}
-    if (n < 1) {slideIndex = slides.length}
-    for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
+    var slides = document.getElementsByClassName('mySlides');
+    if(slides.length > 0){
+        if (n > slides.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slides[slideIndex-1].style.display = "block";
     }
-    for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" active", "");
-    }
-    slides[slideIndex-1].style.display = "block";
-    dots[slideIndex-1].className += " active";
-    captionText.innerHTML = dots[slideIndex-1].alt;
 }
 
-$(function () {
-    var pics = [];
-    $("#picture-upload").on("change",function () {
-        pics.push($("#picture-upload").val());
-        $("#picture-upload").val(pics)
-        console.log(pics)
-    })
+$(".new_comment .btn-info").on("click",function (event) {
+    var time = new Date().getTime();
+    var regexp = new RegExp($(this).data('id'), 'g');
+    $(this).before($(this).data('fields').replace(regexp, time));
+    event.preventDefault();
 })
+
+$(document).on('click', '.remove_fields', function(event) {
+    $(this).prev('input[type=hidden]').val('1');
+    $(this).closest('fieldset').hide();
+    return event.preventDefault();
+});

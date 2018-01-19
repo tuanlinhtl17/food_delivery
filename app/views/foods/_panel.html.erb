@@ -27,10 +27,13 @@
       <div class="row">
         <div class="col-xs-6 col-md-8" >
           <ul class="list-inline" >
-            <li class="list-inline-item"><a><i class="fa fa-comment"></i>&nbsp;<%= t "views.foods.show.comment" %></a></li>
-            <li class="list-inline-item"><a><i class="fa fa-camera"></i>&nbsp;<%= t "views.foods.show.picture" %></a></li>
-            <li class="list-inline-item"><a href="https://www.facebook.com/dialog/share?app_id=510412632666893&display=popup&href=<%= food_url(@food) %>&redirect_uri=<%= food_url(@food) %>"><i class="fa fa-share-alt"></i>&nbsp;<%= t "views.foods.show.share" %></a></li>
-            <li class="list-inline-item"><a><i class="fa fa-phone"></i>&nbsp;<%= t "views.foods.show.call" %></a></li>
+            <% if logged_in? %>
+            <li class="list-inline-item"><button class="btn btn-info" data-toggle="modal" data-target="#commentModal"><i class="fa fa-comment"></i>&nbsp;<%= t "views.foods.show.comment" %></button></li>
+            <% else %>
+            <li class="list-inline-item"><button class="btn btn-info" data-toggle="modal" data-target="#loginModal"><i class="fa fa-comment"></i>&nbsp;<%= t "views.foods.show.comment" %></button></li>
+            <% end %>
+            <li class="list-inline-item"><button class="btn btn-info" href="https://www.facebook.com/dialog/share?app_id=510412632666893&display=popup&href=<%= food_url(@food) %>&redirect_uri=<%= food_url(@food) %>"><i class="fa fa-share-alt"></i>&nbsp;<%= t "views.foods.show.share" %></button></li>
+            <li class="list-inline-item"><button class="btn btn-info"><i class="fa fa-phone"></i>&nbsp;<%= t "views.foods.show.call" %></button></li>
           </ul>
         </div>
       </div>
@@ -39,7 +42,7 @@
         <div class="col-xs-6 col-md-8" >
           <div class="image-gallery-list">
             <ul class="image-gallery-ul">
-              <%= render @comment_foods %>
+              <%= render @comments %>
             </ul>
           </div>
         </div>
@@ -47,14 +50,27 @@
 
         <div class="tab-pane fade" id="pictures">
           <div class="col-xs-6 col-md-8" >
-            <div class="row" style="display:flex; flex-wrap:wrap;">
-              <% @foods.each do |food| %>
-                <div id="picture-comment">
-                  <img src="https://www.w3schools.com/w3css/img_fjords.jpg" height="200" width="200">
-                </div>
-              <% end %>
+            <div class="row">
+          <% @pictures.each_with_index do |picture,index| %>
+                <img id="picture-comment" src=<%=picture.image %> width="130em" height="120em" onclick="openModal();currentSlide(<%= index + 1 %>)">
+          <% end %>
             </div>
           </div>
+           <div id="myModal" class="modal-picture">
+            <span class="close cursor" onclick="closeModal()">&times;</span>
+            <div class="modal-content-picture">
+             <% @pictures.each do |picture| %>
+              <div class="mySlides">
+              <img src=<%=picture.image %> style="width:100%" height="100%">
+              </div>
+             <% end %>
+             <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+             <a class="next" onclick="plusSlides(1)">&#10095;</a>
+             <div class="caption-container">
+                 <p id="caption"></p>
+                </div>
+                </div>
+              </div>
         </div>
       </div>
       <div class="col-xs-6 col-md-2" ></div>
@@ -62,4 +78,6 @@
 
   </div>
 </div>
-<%= render "layouts/form_login" %>
+<%= render "comments/form_comment" %>
+<%= javascript_include_tag "food", "data-turbolinks-track": "reload" %>
+

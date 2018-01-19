@@ -1,9 +1,11 @@
 class FoodsController < ApplicationController
   def show
     @food = Food.find params[:id]
-    @foods = Food.all
     redirect_to root_url unless @food
-    @comment_foods = @food.comment_foods.all
+    @comments = Comment.food_comment params[:id]
+    @comment = Comment.new
+    @picture = @comment.pictures.build
+    @pictures = Picture.all_food_comment_picture params[:id]
   end
 
   def index

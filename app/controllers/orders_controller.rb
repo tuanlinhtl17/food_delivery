@@ -35,7 +35,7 @@ class OrdersController < ApplicationController
   def create
     carts = Cart.cart_order current_user.id
     order_details = to_hash carts
-    if params[:order][:address] != ""
+    if params[:order][:address].present?
       address = params[:order][:address]
     else
       address = current_user.address

@@ -24,14 +24,14 @@ ActiveRecord::Schema.define(version: 20180117035351) do
     t.index ["user_id"], name: "index_carts_on_user_id"
   end
 
-  create_table "comment_foods", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "content"
     t.bigint "user_id"
     t.bigint "food_id"
-    t.string "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["food_id"], name: "index_comment_foods_on_food_id"
-    t.index ["user_id"], name: "index_comment_foods_on_user_id"
+    t.index ["food_id"], name: "index_comments_on_food_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
   create_table "food_categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -77,6 +77,14 @@ ActiveRecord::Schema.define(version: 20180117035351) do
     t.index ["employee_id"], name: "index_orders_on_employee_id"
   end
 
+  create_table "pictures", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "image"
+    t.bigint "comment_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["comment_id"], name: "index_pictures_on_comment_id"
+  end
+
   create_table "subscriptions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.bigint "user_id"
     t.string "endpoint"
@@ -118,8 +126,6 @@ ActiveRecord::Schema.define(version: 20180117035351) do
 
   add_foreign_key "carts", "foods"
   add_foreign_key "carts", "users"
-  add_foreign_key "comment_foods", "foods"
-  add_foreign_key "comment_foods", "users"
   add_foreign_key "foods", "food_categories"
   add_foreign_key "foods", "users"
   add_foreign_key "order_details", "foods"
