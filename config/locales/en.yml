@@ -207,6 +207,13 @@ your password will stay as it is."
         shipping_address: "Shipping address"
         select_address: "Select the place of receipt"
         info_order: "Information line"
+      index:
+        customer:     "Customer"
+        employee:     "Shipper"
+        address:      "Address"
+        download:     "Download"
+        total_money:  "Total"
+        order_month:  "Orders in month"
       check:
         confirm: "Are you sure ?"
         error: "Something wrong ! Cannot find that order"

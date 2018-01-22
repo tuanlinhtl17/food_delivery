@@ -18,6 +18,7 @@
         <li><a href="<%= orders_path(orders: "inprogress")%>"><%= t "views.layouts.header.processing" %></a></li>
       <% elsif logged_in? && current_user.admin?%>
         <li><a href="#newFood" data-toggle="modal"><%= t "views.foods.new.new_food" %></a></li>
+        <li><a href="<%= orders_url %>"><%= t "views.orders.index.order_month" %><tháng></tháng></a></li>
       <% else %>
         <li><a href="#"><%= t "views.layouts.header.all" %></a></li>
         <li><a href="#"><%= t "views.layouts.header.lunch" %></a></li>
@@ -31,13 +32,16 @@
     <ul class="nav navbar-nav navbar-right">
       <% if !logged_in? %>
         <li><a href="#loginModal" data-toggle="modal" id="login-button"><i class="fa fa-sign-in fa-2x" aria-hidden="true"></i> <%= t("views.layouts.login") %></a></li>
-        <li><a href="#signupModal" data-toggle="modal" ><i class="fa fa-user-plus fa-2x"></i> <%= t "views.layouts.signup"%></a></li>
+        <li><a href="#loginModal" data-toggle="modal" id="signup-button"><i class="fa fa-user-plus fa-2x"></i> <%= t "views.layouts.signup"%></a></li>
       <% else %>
+        <% if current_user.admin? %>
+        <% else %>
         <li>
           <%= link_to orders_path do %>
             <i class="fa fa-list fa-2x" aria-hidden="true"></i> <%= t "views.layouts.orders" %>
           <% end %>
         </li>
+        <% end %>
         <li>
           <%= link_to current_user do %>
             <i class="fa fa-user fa-2x" aria-hidden="true"></i> <%= t "views.layouts.profile" %>
@@ -62,3 +66,4 @@
 </nav>
 <%= render "layouts/form_login" %>
 <%= render "foods/new" %>
+<%= javascript_include_tag "login_modal", "data-turbolinks-track": "reload" %>

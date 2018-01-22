@@ -47,7 +47,6 @@ ActiveRecord::Schema.define(version: 20180117035351) do
     t.bigint "food_category_id"
     t.bigint "user_id"
     t.float "rating_avg", limit: 24
-    t.integer "rate_count"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["food_category_id"], name: "index_foods_on_food_category_id"

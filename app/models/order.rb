@@ -7,15 +7,19 @@ class Order < ApplicationRecord
   belongs_to :employee, class_name: "User", optional: true
   belongs_to :customer, class_name: "User", optional: true
   scope :new_order, ->{
-    where "status LIKE ?", 1
+    where "status LIKE ?", Settings.status.new_order
   }
 
   scope :inprogress, ->{
-    where "status LIKE ?", 2
+    where "status LIKE ?", Settings.status.in_progress
   }
 
   scope :done, ->{
-    where "status LIKE ?", 3
+    where "status LIKE ?", Settings.status.done
+  }
+
+  scope :deliveried_in_month, ->{
+    where("status = #{Settings.status.done} AND Month(created_at) = Month(CURDATE()) AND YEAR(created_at) = YEAR(CURDATE())")
   }
 
   def new?

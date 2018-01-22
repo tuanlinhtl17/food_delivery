@@ -208,6 +208,13 @@ mật khẩu của bạn sẽ vẫn như nó được."
         shipping_address: "Địa chỉ nhận hàng"
         select_address: "Chọn địa chỉ giao hàng"
         info_order: "Thông tin đơn hàng"
+      index:
+        customer:     "Khách hàng"
+        employee:     "Nhân viên giao hàng"
+        address:      "Địa chỉ"
+        download:     "Tải xuống"
+        total_money:  "Tổng tiền"
+        order_month:  "Đơn hàng trong tháng"
       checked:
         confirm: "Bạn chắc chứ ?"
         error: "Có lỗi xảy ra ! Không tìm thấy đơn đặt hàng "

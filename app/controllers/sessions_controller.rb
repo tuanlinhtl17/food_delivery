@@ -21,8 +21,8 @@ class SessionsController < ApplicationController
           redirect_to root_url
         end
       else
-        flash.now[:danger] = t "controllers.sessions.create.danger"
-        render "new"
+        flash[:danger] = t "controllers.sessions.create.danger"
+        redirect_to request.referrer || root_url
       end
     else
       begin
