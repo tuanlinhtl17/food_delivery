@@ -42,3 +42,10 @@ $(document).on('click', '.remove_fields', function(event) {
     $(this).closest('fieldset').hide();
     return event.preventDefault();
 });
+
+$(".new_annoucement .btn-info").on("click",function (event) {
+    var time = new Date().getTime();
+    var regexp = new RegExp($(this).data('id'), 'g');
+    $(this).before($(this).data('fields').replace(regexp, time));
+    event.preventDefault();
+})

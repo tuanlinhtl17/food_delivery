@@ -1,0 +1,29 @@
+<div id="addAnnoucement" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title"><%= t "views.annoucements.add_annoucement" %></h4>
+      </div>
+      <div class="modal-body">
+        <%= form_for Annoucement.new do |f| %>
+          <%= f.text_field :title, class: "form-control", placeholder: t("views.annoucements.title")%>
+          <br>
+          <%= f.fields_for :pictures do |picture| %>
+            <%= render "picture_fields", f: picture %>
+          <% end %>
+            <%= link_to_add_fields(t("views.annoucements.add_annoucement"), f, :pictures) %>
+      </div>
+      <div class="modal-footer">
+        <%= f.submit t("views.annoucements.create"), class:"btn btn-success", id:"submit-comment" %>
+        <% end %>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<%= javascript_include_tag "food", "data-turbolinks-track": "reload" %>

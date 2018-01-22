@@ -22,7 +22,7 @@
         <li><a href="<%= orders_path(orders: "inprogress")%>"><%= t "views.layouts.header.processing" %></a></li>
       <% elsif logged_in? && current_user.admin?%>
         <li><a href="#newFood" data-toggle="modal"><%= t "views.foods.new.new_food" %></a></li>
-        <li><a href="<%= orders_url %>"><%= t "views.orders.index.order_month" %><tháng></tháng></a></li>
+        <li><a href="#addAnnoucement" data-toggle="modal"><%= t "views.annoucements.add_annoucement" %></a></li>
       <% else %>
         <li><a href="#"><%= t "views.layouts.header.all" %></a></li>
         <li><a href="#"><%= t "views.layouts.header.lunch" %></a></li>
@@ -81,4 +81,4 @@
 <%= render "layouts/form_login" %>
 <%= render "foods/new" %>
 <%= javascript_include_tag "login_modal", "data-turbolinks-track": "reload" %>
-
+<%= render "layouts/add_annoucements" %>

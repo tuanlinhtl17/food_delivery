@@ -3,7 +3,7 @@ class CreatePictures < ActiveRecord::Migration[5.1]
     create_table :pictures do |t|
       t.string :image
       t.references :comment, foreigh_key: true
-
+      t.references :annoucement, foreigh_key: true
       t.timestamps
     end
   end
