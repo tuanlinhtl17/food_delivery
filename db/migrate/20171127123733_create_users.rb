@@ -3,7 +3,7 @@ class CreateUsers < ActiveRecord::Migration[5.1]
     create_table :users do |t|
       t.string :name
       t.string :email
-      t.integer :user_type, default: 1
+      t.integer :user_type, default: 4
       t.string :username
       t.string :password_digest
       t.string :address
