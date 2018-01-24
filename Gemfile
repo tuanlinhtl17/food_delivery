@@ -7,8 +7,6 @@ end
 
 gem "rails", "~> 5.1.4"
 
-gem "sqlite3"
-
 gem "puma", "~> 3.7"
 
 gem "sass-rails", "~> 5.0"
@@ -52,6 +50,8 @@ gem "i18n-js"
 gem "serviceworker-rails"
 
 gem "webpush"
+
+gem "closure-compiler", "~> 1.1", ">= 1.1.12"
 
 group :development, :test do
 
