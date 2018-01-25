@@ -9,11 +9,16 @@ class UsersController < ApplicationController
     @user = User.new user_params
     if @user.save
       @user.send_activation_email
-      flash[:info] = t("controllers.users.register.info")
+      flash[:info] = t "controllers.users.register.info"
       redirect_to @user
     else
-      render "new"
+      redirect_to root_url
     end
+  end
+
+  def edit
+    @user = User.find params[:id]
+    redirect_to root_url unless correct_user @user
   end
 
   def update
@@ -23,6 +28,15 @@ class UsersController < ApplicationController
         flash[:success] = t("views.users.update.success")
         redirect_to root_url
       end
+    elsif params[:id].present?
+      @user = User.find params[:id]
+      return unless correct_user @user
+      if @user.update_attributes user_params
+        flash[:success] = t "controllers.users.update.success"
+      else
+        flash[:danger] = t "controllers.users.update.errors"
+      end
+      redirect_to @user
     else
       flash[:danger] = t("views.users.update.danger2")
       redirect_to root_url

@@ -12,6 +12,9 @@ vi:
     users:
       register:
         info: "Hãy kiểm tra email của bạn để xác nhận tài khoản của bạn."
+      update:
+        success: "Cập nhật thành công"
+        errors: "Có lỗi xảy ra! Không thể cập nhật tài khoản của bạn"
     sessions:
       create:
         message1: "Tài khoản chưa được xác nhận. "
@@ -56,8 +59,6 @@ mật khẩu của bạn sẽ vẫn như nó được."
         email: "Email"
         password: "Mật khẩu"
         comfirmation: "Xác nhận mật khẩu"
-        address: "Địa chỉ"
-        phone_number: "Số điện thoại"
       show:
         type: "Kiểu người dùng"
         email: "Email"
@@ -77,6 +78,11 @@ mật khẩu của bạn sẽ vẫn như nó được."
         shipper: "Nhân viên giao hàng"
         chef: "Đầu bếp"
         title: "Ủy quyền"
+        edit: "Chỉnh sửa thông tin"
+      edit:
+        update: "Cập nhật"
+        address: "Địa chỉ"
+        phone_number: "Số điện thoại"
     sessions:
       new:
         username: "Tên đăng nhập"

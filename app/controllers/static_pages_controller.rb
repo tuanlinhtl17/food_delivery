@@ -18,6 +18,7 @@ class StaticPagesController < ApplicationController
     @hot_chefs = User.hotchef
     @shippers = User.shipper
     @all_foods = Food.all.paginate page: params[:page], per_page: 18
+    @user = User.new unless logged_in?
 
     respond_to do |format|
       format.html

@@ -12,6 +12,9 @@ en:
     users:
       register:
         info: "Please check your email to activate your account."
+      update:
+        success: "Update successful"
+        errors: "Something wrong! Cannot update your account"
     sessions:
       create:
         message1: "Account not activated. "
@@ -56,8 +59,6 @@ your password will stay as it is."
         email: "Email"
         password: "Password"
         comfirmation: "Confirmation"
-        address: "Address"
-        phone_number: "Phone number"
       show:
         type: "Type"
         email: "Email"
@@ -77,6 +78,11 @@ your password will stay as it is."
         shipper: "Shipper"
         chef: "Chef"
         title: "Authority"
+        edit: "Edit my profile"
+      edit:
+        update: "Update"
+        phone_number: "Phone number"
+        address: "Address"
     sessions:
       new:
         username: "Username"
