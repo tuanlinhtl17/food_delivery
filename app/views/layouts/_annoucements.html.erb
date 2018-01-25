@@ -4,8 +4,12 @@
       <div class="carousel slide vertical" id="myAnnoucements">
         <% if newest_annoucement.present? %>
         <div class="carousel-inner">
+          <div class="item active">
+            <%= image_tag newest_annoucement[0].pictures[0].image_url :thumb %>
+          </div>
+
           <% newest_annoucement[0].pictures.each do |pic| %>
-            <div class="item active">
+            <div class="item">
               <%= image_tag pic.image_url :thumb %>
             </div>
           <% end %>

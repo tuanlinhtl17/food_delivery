@@ -7,6 +7,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new user_params
+    @user.avatar_url = Settings.default_avatar
     if @user.save
       @user.send_activation_email
       flash[:info] = t "controllers.users.register.info"

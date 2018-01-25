@@ -59,7 +59,7 @@
           <% end %>
         </li>
         <li>
-          <%= link_to logout_path, remote: true, method: :delete do %>
+          <%= link_to logout_path, remote: true, id: "logout", data: current_user.id, method: :delete do %>
             <i class="fa fa-sign-out fa-2x" aria-hidden="true"></i> <%= t "views.layouts.logout" %>
           <% end %>
         </li>

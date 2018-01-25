@@ -20,4 +20,12 @@ class SubscriptionsController < ApplicationController
     end
     head :ok
   end
+
+  def destroy
+    subscription = Subscription.find_by user_id: params[:user_id]
+    if subscription
+      subscription.destroy
+    end
+    head :ok
+  end
 end

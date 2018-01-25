@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   delete "/logout", to: "sessions#destroy"
   post "/create_cart", to: "carts#create"
   post "/subscribe" => "subscriptions#create"
+  post "/unsubscribe" => "subscriptions#destroy"
   post "/push" => "push_notifications#create"
   post "/deliveries" => "deliveries#create"
   resources :foods

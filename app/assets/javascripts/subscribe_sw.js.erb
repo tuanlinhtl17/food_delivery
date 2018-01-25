@@ -17,3 +17,28 @@ if (navigator.serviceWorker) {
       alert('<%= I18n.t "views.layouts.sw_registration" %>');
     });
 }
+
+function unsubscribe() {
+  navigator.serviceWorker.ready
+    .then((serviceWorkerRegistration) => {
+      serviceWorkerRegistration.pushManager.getSubscription()
+        .then((subscription) => {
+          if (!subscription) {
+            return;
+          }
+
+          subscription.unsubscribe()
+            then(function() {
+            })
+            .catch((e) => {
+            });
+        });
+    });
+}
+
+$(document).ready(function () {
+  $("#logout").on("click", function() {
+    unsubscribe();
+    $.post("/unsubscribe", { user_id: $(this).attr('data') });
+  });
+});
